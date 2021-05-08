@@ -15,5 +15,16 @@
 		<property name="initialValue">
 			<value>0</value>
 		</property>
+		<property name="seekSpeed">
+			<value>0.5</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{7dbdba4a-7931-4008-b03c-599db901acec}</destination>
+		</relationship>
+	</object>
+	<object class="ADSRModulator" id="{7dbdba4a-7931-4008-b03c-599db901acec}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>cursorPosition</value>
+		</property>
 	</object>
 </objects>
