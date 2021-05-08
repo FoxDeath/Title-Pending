@@ -29,7 +29,7 @@ public class LoadingBarController : MonoBehaviour
 
         targetDots = (int)(conpletionPrecentage * maxDots);
 
-        for (int i = 0; i <= loadingDots.Count; i++)
+        for (int i = 0; i < loadingDots.Count; i++)
         {
             if (i < targetDots)
             {

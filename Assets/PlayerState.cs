@@ -13,6 +13,7 @@ public class PlayerState : MonoBehaviour
 
     static private PlayerMovement playerMovement;
     static private PlayerInputs playerInputs;
+    static private PlayerAnimatorController playerAnimationController;
 
 
     static private State state;
@@ -33,6 +34,7 @@ public class PlayerState : MonoBehaviour
     {
         playerMovement = GetComponent<PlayerMovement>();
         playerInputs = GetComponent<PlayerInputs>();
+        playerAnimationController = GetComponent<PlayerAnimatorController>();
     }
 
     private void Start()
@@ -143,6 +145,8 @@ public class PlayerState : MonoBehaviour
             case State.Moving:
                 if(state != State.Moving)
                 {
+                    playerAnimationController.SetTrigger("Moving");
+
                     state = newState;
                 }
             break;
@@ -183,6 +187,8 @@ public class PlayerState : MonoBehaviour
                 if(state != State.Idle)
                 {
                     state = newState;
+
+                    playerAnimationController.SetTrigger("Idle");
 
                     PlayerMovement.StopMoving();
                 }
