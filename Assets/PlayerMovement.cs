@@ -54,6 +54,11 @@ public class PlayerMovement : MonoBehaviour
 
     public void Movement(float direction)
     {
+        if(PlayerState.GetState() == PlayerState.State.Sliding)
+        {
+            return;
+        }
+
         PlayerState.SetState(PlayerState.State.Moving);
 
         FlipPlayer(direction);

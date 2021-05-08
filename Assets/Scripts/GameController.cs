@@ -79,15 +79,11 @@ public class GameController : MonoBehaviour
         {
             inInputPhase = false;
 
-            GameObject.Find("Player").transform.Find("Sprite").GetComponent<SpriteRenderer>().color = Color.red;
-
             director.Play();
         }
         else
         {
             director.Stop();
-            
-            GameObject.Find("Player").transform.Find("Sprite").GetComponent<SpriteRenderer>().color = Color.blue;
 
             inInputPhase = true;
 

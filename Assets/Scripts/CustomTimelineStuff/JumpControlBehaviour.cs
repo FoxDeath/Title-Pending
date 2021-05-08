@@ -33,7 +33,7 @@ public class JumpControlBehaviour : PlayableBehaviour
         }
 
         //set character to default state
-        PlayerState.SetState(PlayerState.State.Idle);
+        //PlayerState.SetState(PlayerState.State.Idle);
 
         base.OnBehaviourPause(playable, info);
     }

@@ -17,6 +17,9 @@ GameObject:
   - component: {fileID: 8810842579624239358}
   - component: {fileID: 8810842579624239346}
   - component: {fileID: 1632970997}
+  - component: {fileID: 981646025}
+  - component: {fileID: 981646023}
+  - component: {fileID: 981646024}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -216,8 +219,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a38f32f90e51f724fb80f1ab7e3f3c67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveLeftHelperTimeStamp: 0
-  moveRightHelperTimeStamp: 0
   timer: 0
 --- !u!114 &8810842579624239346
 MonoBehaviour:
@@ -259,6 +260,50 @@ PlayableDirector:
     value: {fileID: 8810842579624239359}
   m_ExposedReferences:
     m_References: []
+--- !u!95 &981646025
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8810842579624239354}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 09edf57b8c36db142b42fb3273cd3d2b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &981646023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8810842579624239354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8678796005c8af24184584196573bfdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &981646024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8810842579624239354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89a1872829cb04346af4d69357f609c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentMusic: {fileID: 0}
 --- !u!1 &8810842579841927459
 GameObject:
   m_ObjectHideFlags: 0
