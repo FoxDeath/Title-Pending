@@ -14,6 +14,7 @@ public class PlayerState : MonoBehaviour
     static private PlayerMovement playerMovement;
     static private PlayerInputs playerInputs;
     static private PlayerAnimatorController playerAnimationController;
+    static private PlayerAudioController playerAudioController;
 
 
     static private State state;
@@ -35,6 +36,7 @@ public class PlayerState : MonoBehaviour
         playerMovement = GetComponent<PlayerMovement>();
         playerInputs = GetComponent<PlayerInputs>();
         playerAnimationController = GetComponent<PlayerAnimatorController>();
+        playerAudioController = GetComponent<PlayerAudioController>();
     }
 
     private void Start()
@@ -145,6 +147,8 @@ public class PlayerState : MonoBehaviour
             case State.Moving:
                 if(state != State.Moving)
                 {
+                    playerAudioController.SetMusicParameter("Movement", 1f);
+
                     playerAnimationController.SetTrigger("Moving");
 
                     state = newState;
@@ -154,6 +158,8 @@ public class PlayerState : MonoBehaviour
             case State.Jumping:
                 if(state != State.Jumping && state != State.Sliding)
                 {
+                    playerAudioController.SetMusicParameter("Jump", 1f);
+
                     state = newState;
 
                     if(GetIsGrounded())
@@ -173,6 +179,8 @@ public class PlayerState : MonoBehaviour
             case State.Sliding:
                 if(state != State.Sliding && state != State.Jumping)
                 {
+                    playerAudioController.SetMusicParameter("Slide", 1f);
+
                     state = newState;
 
                     playerMovement.Slide();
@@ -186,6 +194,8 @@ public class PlayerState : MonoBehaviour
             case State.Idle:
                 if(state != State.Idle)
                 {
+                    playerAudioController.ResetParamaters();
+
                     state = newState;
 
                     playerAnimationController.SetTrigger("Idle");
