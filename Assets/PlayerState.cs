@@ -147,7 +147,11 @@ public class PlayerState : MonoBehaviour
             case State.Moving:
                 if(state != State.Moving)
                 {
+                    playerAudioController.SetMusicParameter("Slide", 0f);
+
                     playerAudioController.SetMusicParameter("Movement", 1f);
+
+                    ResetAllTriggers();
 
                     playerAnimationController.SetTrigger("Moving");
 
@@ -162,17 +166,25 @@ public class PlayerState : MonoBehaviour
 
                     state = newState;
 
-                    if(GetIsGrounded())
+                    ResetAllTriggers();
+
+                    playerAnimationController.SetTrigger("Jumping");
+
+                    if (GetIsGrounded())
                     {
                         playerMovement.Jump();
                     }
                 }
-            break;
+                break;
 
             case State.Falling:
                 if(PlayerState.state != State.Falling && PlayerMovement.GetVelocity().y <= 0f)
                 {
-                    playerAudioController.ResetParamaters();
+                    playerAudioController.SetMusicParameter("Jump", 0f);
+
+                    ResetAllTriggers();
+
+                    playerAnimationController.SetTrigger("Falling");
 
                     state = newState;
                 }
@@ -183,6 +195,10 @@ public class PlayerState : MonoBehaviour
                 {
                     playerAudioController.SetMusicParameter("Slide", 1f);
 
+                    ResetAllTriggers();
+
+                    playerAnimationController.SetTrigger("Sliding");
+
                     state = newState;
 
                     playerMovement.Slide();
@@ -190,6 +206,8 @@ public class PlayerState : MonoBehaviour
             break;
 
             case State.Dead:
+                    playerAudioController.ResetParamaters();
+
                 state = newState;
             break;
 
@@ -198,14 +216,25 @@ public class PlayerState : MonoBehaviour
                 {
                     playerAudioController.ResetParamaters();
 
-                    state = newState;
+                    ResetAllTriggers();
 
                     playerAnimationController.SetTrigger("Idle");
+
+                    state = newState;
 
                     PlayerMovement.StopMoving();
                 }
             break;
         }
+    }
+
+    private static void ResetAllTriggers()
+    {
+        playerAnimationController.ResetTrigger("Moving");
+        playerAnimationController.ResetTrigger("Jumping");
+        playerAnimationController.ResetTrigger("Falling");
+        playerAnimationController.ResetTrigger("Sliding");
+        playerAnimationController.ResetTrigger("Idle");
     }
 
     static public void SetIsFacingRight(bool isFacingRight)
@@ -224,9 +253,7 @@ public class PlayerState : MonoBehaviour
 
             if(isGrounded)
             {
-            }
-            else
-            {
+                PlayerInputs.MovePerformedGameplay();
             }
         }
     }

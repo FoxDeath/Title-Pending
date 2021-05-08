@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpForce;
     [SerializeField] float jumpTime;
     [SerializeField] float slideSpeed = 65f;
+    [SerializeField] float slideTime = 0.6f;
     [SerializeField] float gravity;
 
     static public float facing;
@@ -170,8 +171,6 @@ public class PlayerMovement : MonoBehaviour
 
     private IEnumerator SlideBehaviour()
     {
-        float timeToSlide = 0.3f;
-
         PlayerInputs.GetInputActions().Disable();
 
         PlayerInputs.SetMoveInput(0f);
@@ -182,12 +181,12 @@ public class PlayerMovement : MonoBehaviour
 
         if(PlayerPhysicsCalculations.hitSlide)
         {
-            timeToSlide += 0.6f;
+            slideTime += 0.6f;
             
             AddVelocity(Vector2.right * PlayerMovement.facing * slideSpeed * 3f);
         }
 
-        yield return new WaitForSeconds(timeToSlide);
+        yield return new WaitForSeconds(slideTime);
 
         PlayerInputs.GetInputActions().Enable();
 
