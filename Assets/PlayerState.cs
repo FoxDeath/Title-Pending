@@ -172,6 +172,8 @@ public class PlayerState : MonoBehaviour
             case State.Falling:
                 if(PlayerState.state != State.Falling && PlayerMovement.GetVelocity().y <= 0f)
                 {
+                    playerAudioController.ResetParamaters();
+
                     state = newState;
                 }
             break;

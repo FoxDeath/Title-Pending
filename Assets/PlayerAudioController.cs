@@ -10,14 +10,14 @@ public class PlayerAudioController : MonoBehaviour
     public void SetMusicParameter(string name, float value)
     {
         ResetParamaters();
-        
+
         currentMusic.SetParameter(name, value);
     }
 
     public void ResetParamaters()
     {
-        SetMusicParameter("Movement", 0f);
-        SetMusicParameter("Jump", 0f);
-        SetMusicParameter("Slide", 0f);
+        currentMusic.SetParameter("Movement", 0f);
+        currentMusic.SetParameter("Jump", 0f);
+        currentMusic.SetParameter("Slide", 0f);
     }
 }
