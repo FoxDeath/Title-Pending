@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     private static Rigidbody2D myRigidbody;
     private SpriteRenderer spriteRenderer;
 
-    private void Awake() 
+    private void Awake()
     {
         myRigidbody = GetComponent<Rigidbody2D>();
 
@@ -52,18 +52,24 @@ public class PlayerMovement : MonoBehaviour
         myRigidbody.velocity += Vector2.down * gravity;
     }
 
-    public void Movement()
+    public void Movement(float direction)
     {
-        if(PlayerState.GetState() != PlayerState.State.Sliding)
-        {
-            FlipPlayer();
-        }
+        PlayerState.SetState(PlayerState.State.Moving);
 
-        myRigidbody.velocity += new Vector2(PlayerInputs.GetMoveInput() * speed, 0f);
+        FlipPlayer(direction);
+
+        myRigidbody.velocity += new Vector2(direction * speed, 0f);
     }
 
     public void Jump()
     {
+        if(!PlayerState.GetIsGrounded())
+        {
+            return;
+        }
+
+        PlayerState.SetState(PlayerState.State.Jumping);
+
         if(jumpTimerCoroutine != null)
         {
             StopCoroutine(jumpTimerCoroutine);
@@ -72,6 +78,18 @@ public class PlayerMovement : MonoBehaviour
         myRigidbody.velocity += Vector2.up * jumpForce;
 
         jumpTimerCoroutine = StartCoroutine(JumpTimerBehaviour());
+    }
+
+    public void Slide()
+    {
+        if(!PlayerState.GetIsGrounded() || PlayerState.GetState() == PlayerState.State.Sliding)
+        {
+            return;
+        }
+        
+        PlayerState.SetState(PlayerState.State.Sliding);
+
+        StartCoroutine(SlideBehaviour());
     }
 
     public void VelocityClamp(float clampX = 0f, float clampY = 0f)
@@ -91,14 +109,7 @@ public class PlayerMovement : MonoBehaviour
 
     static public void StopMoving(bool noInput = false)
     {
-        if(PlayerInputs.GetMoveInput() == 0f)
-        {
-            PlayerMovement.SetVelocityX(0f);
-        }
-        else if(noInput)
-        {
-            PlayerMovement.SetVelocityX(0f);
-        }
+        PlayerMovement.SetVelocityX(0f);
     }
 
     static public void StopJumping(bool whenFalling = false)
@@ -123,23 +134,17 @@ public class PlayerMovement : MonoBehaviour
         myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, y);
     }
 
-    public void FlipPlayer()
+    public void FlipPlayer(float direction)
     {
-        if(!PlayerState.GetIsFacingRight() && PlayerInputs.GetMoveInput() > 0f)
+        if(!PlayerState.GetIsFacingRight() && direction > 0f)
         {
             Flip();
         }
-        else if(PlayerState.GetIsFacingRight() && PlayerInputs.GetMoveInput() < 0f)
+        else if(PlayerState.GetIsFacingRight() && direction < 0f)
         {
             Flip();
         }
     }
-
-    public void Slide()
-    {
-        StartCoroutine(SlideBehaviour());
-    }
-    
 
     static public void AddVelocity(Vector2 velocity)
     {
@@ -173,8 +178,6 @@ public class PlayerMovement : MonoBehaviour
     {
         PlayerInputs.GetInputActions().Disable();
 
-        PlayerInputs.SetMoveInput(0f);
-
         PlayerMovement.StopMoving();
 
         AddVelocity(Vector2.right * PlayerMovement.facing * slideSpeed);
@@ -190,8 +193,6 @@ public class PlayerMovement : MonoBehaviour
 
         PlayerInputs.GetInputActions().Enable();
 
-        PlayerInputs.MovePerformedGameplay();
-
-        Movement();
+        PlayerState.SetState(PlayerState.State.Idle);
     }
 }

@@ -16,9 +16,7 @@ GameObject:
   - component: {fileID: 8810842579624239359}
   - component: {fileID: 8810842579624239358}
   - component: {fileID: 8810842579624239346}
-  - component: {fileID: 1831377623}
-  - component: {fileID: 1831377631}
-  - component: {fileID: 1831377624}
+  - component: {fileID: 1632970997}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -123,22 +121,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8810842579624239358}
         m_TargetAssemblyTypeName: PlayerInputs, Assembly-CSharp
-        m_MethodName: MovePerformed
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: bae291e6-df68-4321-a646-b71325939079
-    m_ActionName: Gameplay/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8810842579624239358}
-        m_TargetAssemblyTypeName: PlayerInputs, Assembly-CSharp
         m_MethodName: SlidePerformed
         m_Mode: 0
         m_Arguments:
@@ -155,6 +137,38 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 6c71b0dd-040c-4c8b-8205-e1cb7328807f
     m_ActionName: Gameplay/PauseMenu[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8810842579624239358}
+        m_TargetAssemblyTypeName: PlayerInputs, Assembly-CSharp
+        m_MethodName: LeftPerformed
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 55e6d99a-d482-4f12-a084-dd48c3fe3238
+    m_ActionName: Gameplay/Left[/Keyboard/a,/Keyboard/leftArrow,/DualShock4GamepadHID/leftStick/left]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8810842579624239358}
+        m_TargetAssemblyTypeName: PlayerInputs, Assembly-CSharp
+        m_MethodName: RightPerformed
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ea6a443a-26e5-4754-bbf4-8379a678a82d
+    m_ActionName: Gameplay/Right[/Keyboard/d,/Keyboard/rightArrow,/DualShock4GamepadHID/leftStick/right]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
@@ -202,6 +216,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a38f32f90e51f724fb80f1ab7e3f3c67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveLeftHelperTimeStamp: 0
+  moveRightHelperTimeStamp: 0
+  timer: 0
 --- !u!114 &8810842579624239346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,50 +234,31 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
---- !u!95 &1831377623
-Animator:
+--- !u!320 &1632970997
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8810842579624239354}
+  m_Enabled: 1
   serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8810842579624239354}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 09edf57b8c36db142b42fb3273cd3d2b, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1831377631
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8810842579624239354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8678796005c8af24184584196573bfdb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1831377624
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8810842579624239354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89a1872829cb04346af4d69357f609c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentMusic: {fileID: 0}
+  m_PlayableAsset: {fileID: 11400000, guid: 5da6e6b39156989418055098aea06451, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: 6326402681681174664, guid: 5da6e6b39156989418055098aea06451, type: 2}
+    value: {fileID: 8810842579624239359}
+  - key: {fileID: 2729882878355192853, guid: 5da6e6b39156989418055098aea06451, type: 2}
+    value: {fileID: 8810842579624239359}
+  - key: {fileID: 666081036035948945, guid: 5da6e6b39156989418055098aea06451, type: 2}
+    value: {fileID: 8810842579624239359}
+  - key: {fileID: 852251551782731745, guid: 5da6e6b39156989418055098aea06451, type: 2}
+    value: {fileID: 8810842579624239359}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &8810842579841927459
 GameObject:
   m_ObjectHideFlags: 0

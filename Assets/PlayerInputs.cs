@@ -1,19 +1,54 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Playables;
+using UnityEngine.Timeline;
 
 public class PlayerInputs : MonoBehaviour
 {
+    private PlayableDirector director;
+
+    private GameController gameController;
+
     private static PlayerControls controls;
+
     static private InputActionAsset inputActions;
 
     private static float moveInput;
 
+    private TrackAsset moveLeftTrack;
+
+    private TrackAsset moveRightTrack;
+
+    private TrackAsset jumpTrack;
+    
+    private TrackAsset slideTrack;
+
+    private TimelineClip currentMoveLeftClip;
+
+    private TimelineClip currentMoveRightClip;
+
+    public float timer;
+
     private void Awake()
     {
+        director = GameObject.Find("Player").GetComponent<PlayableDirector>();
+
+        gameController = FindObjectOfType<GameController>();
+
         controls = new PlayerControls();
 
         inputActions = GetComponent<UnityEngine.InputSystem.PlayerInput>().actions;
+
+        TimelineAsset replay = (TimelineAsset)GameObject.Find("Player").GetComponent<PlayableDirector>().playableAsset;
+        
+        moveLeftTrack = replay.GetOutputTrack(1);
+
+        moveRightTrack = replay.GetOutputTrack(2);
+
+        jumpTrack = replay.GetOutputTrack(3);
+
+        slideTrack = replay.GetOutputTrack(4);
     }
 
     private void Start()
@@ -21,65 +56,83 @@ public class PlayerInputs : MonoBehaviour
         controls.Enable();
     }
 
+    private void Update()
+    {
+        if(timer < gameController.currentSequenceDuration)
+        {
+            timer += Time.deltaTime;
+        }
+    }
+
     public void JumpPerformed(InputAction.CallbackContext context)
     {
-        if(PlayerState.GetState() != PlayerState.State.Dead)
-        {
-            if(context.action.phase == InputActionPhase.Started)
-            {
-                if(PlayerState.GetIsGrounded())
-                {
-                    PlayerState.SetState(PlayerState.State.Jumping);                
-                }
-            }
-        }
-    }
-
-    public void MovePerformed(InputAction.CallbackContext context)
-    {
-        if(PlayerState.GetState() == PlayerState.State.Dead || PlayerState.GetState() == PlayerState.State.Sliding)
+        if(!gameController.inInputPhase)
         {
             return;
         }
 
-        Vector2 vectorValue = context.ReadValue<Vector2>();
-
-        moveInput = vectorValue.x;
-
-        MoveInput();
-    }
-
-    public static void MovePerformedGameplay()
-    {
-        if(PlayerState.GetState() == PlayerState.State.Dead)
+        if(context.action.phase == InputActionPhase.Started)
         {
-            return;
-        }
-        
-        Vector2 vectorValue = controls.Gameplay.Move.ReadValue<Vector2>();
+            TimelineClip clip = jumpTrack.CreateDefaultClip();
 
-        moveInput = vectorValue.x;
-        
-        MoveInput();
-    }
+            clip.duration = 0.1f;
 
-    public static void MoveInput()
-    {
-        if((Math.Abs(moveInput) > 0.01f))
-        {
-            PlayerState.SetState(PlayerState.State.Moving);
-        }
-        else
-        {
-            PlayerState.SetState(PlayerState.State.Idle);
+            clip.start = timer;
         }
     }
 
     public void SlidePerformed(InputAction.CallbackContext context)
     {
-        if(PlayerState.GetIsGrounded())
+        if(!gameController.inInputPhase)
         {
-            PlayerState.SetState(PlayerState.State.Sliding);
+            return;
+        }
+
+        if(context.action.phase == InputActionPhase.Started)
+        {
+            TimelineClip clip = slideTrack.CreateDefaultClip();
+
+            clip.duration = 0.1f;
+
+            clip.start = timer;
+        }
+    }
+    
+    public void LeftPerformed(InputAction.CallbackContext context)
+    {
+        if(!gameController.inInputPhase)
+        {
+            return;
+        }
+
+        if(context.action.phase == InputActionPhase.Started)
+        {
+            currentMoveLeftClip = moveLeftTrack.CreateDefaultClip();
+
+            currentMoveLeftClip.start = timer;
+        }
+        else if(context.action.phase == InputActionPhase.Canceled)
+        {
+            currentMoveLeftClip.duration = gameController.currentSequenceDuration - ((gameController.currentSequenceDuration - (gameController.currentSequenceDuration - currentMoveLeftClip.start)) + (gameController.currentSequenceDuration - timer));
+        }
+    }
+    
+    public void RightPerformed(InputAction.CallbackContext context)
+    {
+        if(!gameController.inInputPhase)
+        {
+            return;
+        }
+
+        if(context.action.phase == InputActionPhase.Started)
+        {
+            currentMoveRightClip = moveRightTrack.CreateDefaultClip();
+            
+            currentMoveRightClip.start = timer;
+        }
+        else if(context.action.phase == InputActionPhase.Canceled)
+        {
+            currentMoveRightClip.duration = gameController.currentSequenceDuration - ((gameController.currentSequenceDuration - (gameController.currentSequenceDuration - currentMoveRightClip.start)) + (gameController.currentSequenceDuration - timer));
         }
     }
 
