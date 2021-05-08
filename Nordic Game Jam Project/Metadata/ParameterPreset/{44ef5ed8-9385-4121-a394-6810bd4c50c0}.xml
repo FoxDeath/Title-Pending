@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{44ef5ed8-9385-4121-a394-6810bd4c50c0}">
+		<property name="name">
+			<value>Slide</value>
+		</property>
+		<relationship name="folder">
+			<destination>{440427ff-7559-4a4a-a456-6783098799b9}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{15c88ffd-8e5f-4f7f-87ad-718e88ab4287}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{15c88ffd-8e5f-4f7f-87ad-718e88ab4287}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
