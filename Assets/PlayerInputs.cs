@@ -4,19 +4,21 @@ using UnityEngine.InputSystem;
 
 public class PlayerInputs : MonoBehaviour
 {
+    private static PlayerControls controls;
+    static private InputActionAsset inputActions;
+
     private static float moveInput;
 
-
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        
+        controls = new PlayerControls();
+
+        inputActions = GetComponent<UnityEngine.InputSystem.PlayerInput>().actions;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        controls.Enable();
     }
 
     public void JumpPerformed(InputAction.CallbackContext context)
@@ -47,7 +49,21 @@ public class PlayerInputs : MonoBehaviour
         MoveInput();
     }
 
-    public void MoveInput()
+    public static void MovePerformedGameplay()
+    {
+        if(PlayerState.GetState() == PlayerState.State.Dead)
+        {
+            return;
+        }
+        
+        Vector2 vectorValue = controls.Gameplay.Move.ReadValue<Vector2>();
+
+        moveInput = vectorValue.x;
+        
+        MoveInput();
+    }
+
+    public static void MoveInput()
     {
         if((Math.Abs(moveInput) > 0.01f))
         {
@@ -77,5 +93,15 @@ public class PlayerInputs : MonoBehaviour
         {
             return 0f;
         }
+    }
+
+    public static InputActionAsset GetInputActions()
+    {
+        return inputActions;
+    }
+
+    public static void SetMoveInput(float moveInput)
+    {
+        PlayerInputs.moveInput = moveInput;
     }
 }
