@@ -45,7 +45,6 @@ public class PlayerState : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        print(isGrounded);
         if(state == State.Dead)
         {
             return;
