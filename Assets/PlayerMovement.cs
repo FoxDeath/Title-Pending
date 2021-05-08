@@ -7,7 +7,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] float jumpForce;
     [SerializeField] float jumpTime;
+    [SerializeField] float slideSpeed = 65f;
     [SerializeField] float gravity;
+
+    static public float facing;
 
     private Coroutine jumpTimerCoroutine;
 
@@ -19,6 +22,28 @@ public class PlayerMovement : MonoBehaviour
         myRigidbody = GetComponent<Rigidbody2D>();
 
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+    }
+
+    private void Start() 
+    {
+        facing = 0;    
+    }
+
+    private void Update() 
+    {
+        Facing();
+    }
+
+    private void Facing()
+    {
+        if(PlayerState.GetIsFacingRight())
+        {
+            facing = 1;
+        }
+        else
+        {
+            facing = -1;
+        }
     }
 
     public void Gravity()
@@ -109,6 +134,17 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void Slide()
+    {
+        StartCoroutine(SlideBehaviour());
+    }
+    
+
+    static public void AddVelocity(Vector2 velocity)
+    {
+        myRigidbody.velocity += velocity;
+    }
+
     static public Vector2 GetVelocity()
     {
         return myRigidbody.velocity;
@@ -130,5 +166,33 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(jumpTime);
 
         StopJumping();
+    }
+
+    private IEnumerator SlideBehaviour()
+    {
+        float timeToSlide = 0.3f;
+
+        PlayerInputs.GetInputActions().Disable();
+
+        PlayerInputs.SetMoveInput(0f);
+
+        PlayerMovement.StopMoving();
+
+        AddVelocity(Vector2.right * PlayerMovement.facing * slideSpeed);
+
+        if(PlayerPhysicsCalculations.hitSlide)
+        {
+            timeToSlide += 0.6f;
+            
+            AddVelocity(Vector2.right * PlayerMovement.facing * slideSpeed * 3f);
+        }
+
+        yield return new WaitForSeconds(timeToSlide);
+
+        PlayerInputs.GetInputActions().Enable();
+
+        PlayerInputs.MovePerformedGameplay();
+
+        Movement();
     }
 }
