@@ -1,13 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LoadingBarController : MonoBehaviour
-{
-    [SerializeField] Transform gameEnd;
+{   
+    [SerializeField] Transform playerPossition;
     [SerializeField] Transform gameStart;
+    [SerializeField] Transform gameEnd;
 
     [SerializeField] GameObject loadingDot;
+
+    [SerializeField] int maxDots = 74;
+    private int targetDots;
 
     public List<GameObject> loadingDots = new List<GameObject>();
 
@@ -15,42 +20,25 @@ public class LoadingBarController : MonoBehaviour
 
     private void Start() 
     {
-        conpletionPrecentage = 0f;
-
-        loadingDots.Add(Instantiate(loadingDot, new Vector3(-7.37f, -4f, 0f), Quaternion.identity, transform));
+        InvokeRepeating("Loading", 0f, 0.1f);    
     }
 
-    private void Update()
+    private void Loading()
     {
-        if(Random.Range(0,2) == 1)
-        AddDot();
-        else
-        RemoveDot();
-    }
-            
+        conpletionPrecentage = (gameStart.position.x - playerPossition.position.x) / (gameStart.position.x - gameEnd.position.x);
 
-    private void AddDot()
-    {
-        if(loadingDots.Count >= 124)
+        targetDots = (int)(conpletionPrecentage * maxDots);
+
+        for (int i = 0; i <= loadingDots.Count; i++)
         {
-            return;
+            if (i < targetDots)
+            {
+                loadingDots[i].SetActive(true);
+            }
+            else if (i > targetDots)
+            {
+                loadingDots[i].SetActive(false);
+            }
         }
-        
-        loadingDots.Add(Instantiate(loadingDot, loadingDots[loadingDots.Count - 1].transform.position + new Vector3(0.12f, 0f, 0f), Quaternion.identity, transform));
     }
-
-    private void RemoveDot()
-    {
-        if(loadingDots.Count <= 1)
-        {
-            return;
-        }
-        
-        GameObject lastDot = loadingDots[loadingDots.Count-1];
-
-        loadingDots.Remove(lastDot);
-
-        Destroy(lastDot);
-    }
-
 }
