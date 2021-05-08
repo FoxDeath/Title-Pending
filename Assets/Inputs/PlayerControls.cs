@@ -27,14 +27,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""interactions"": ""Press(behavior=2)""
                 },
                 {
-                    ""name"": ""Move"",
-                    ""type"": ""Value"",
-                    ""id"": ""bae291e6-df68-4321-a646-b71325939079"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """"
-                },
-                {
                     ""name"": ""Slide/Dash"",
                     ""type"": ""Button"",
                     ""id"": ""2ec5765f-7837-4772-a2f5-0cd68c9cb50a"",
@@ -49,6 +41,22 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Left"",
+                    ""type"": ""Button"",
+                    ""id"": ""55e6d99a-d482-4f12-a084-dd48c3fe3238"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press(behavior=2)""
+                },
+                {
+                    ""name"": ""Right"",
+                    ""type"": ""Button"",
+                    ""id"": ""ea6a443a-26e5-4754-bbf4-8379a678a82d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Press(behavior=2)""
                 }
             ],
             ""bindings"": [
@@ -71,17 +79,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": ""Mouse And Keyboard"",
                     ""action"": ""Jump"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""2cba2b83-e95b-4b0d-a4f1-90c703bc1c8b"",
-                    ""path"": ""<Gamepad>/leftStick"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -130,59 +127,70 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""WASD"",
-                    ""id"": ""cf53b503-50a8-4e7e-b873-27732a67a246"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""3bfadedd-0d80-4a77-bd18-0d41096dee52"",
-                    ""path"": ""<Keyboard>/w"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""d0eb8e62-7178-44ac-a86d-9beac1d78ae9"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Left"",
-                    ""id"": ""014475fa-341b-4017-be19-bc81a4eb9d0f"",
+                    ""name"": """",
+                    ""id"": ""a3c89b55-622c-4755-a4f2-f33e79b4f498"",
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Mouse And Keyboard"",
-                    ""action"": ""Move"",
+                    ""action"": ""Left"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
+                    ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""Right"",
-                    ""id"": ""cdf264a3-94d5-4af0-b90d-9427941a1b84"",
+                    ""name"": """",
+                    ""id"": ""db4325d8-8e6c-4f01-8604-1f34d5a32df1"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse And Keyboard"",
+                    ""action"": ""Left"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b09cc63e-59c0-4060-a6ef-47702a8758fc"",
+                    ""path"": ""<Gamepad>/leftStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Left"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c9097d35-557e-47c2-a2b4-0560753d04d0"",
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Mouse And Keyboard"",
-                    ""action"": ""Move"",
+                    ""action"": ""Right"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""067eb918-5954-4b95-bb31-8b9a647706e5"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse And Keyboard"",
+                    ""action"": ""Right"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7161b858-e302-4194-84c5-47f5456e6b62"",
+                    ""path"": ""<Gamepad>/leftStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Right"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -220,9 +228,10 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         // Gameplay
         m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
         m_Gameplay_Jump = m_Gameplay.FindAction("Jump", throwIfNotFound: true);
-        m_Gameplay_Move = m_Gameplay.FindAction("Move", throwIfNotFound: true);
         m_Gameplay_SlideDash = m_Gameplay.FindAction("Slide/Dash", throwIfNotFound: true);
         m_Gameplay_PauseMenu = m_Gameplay.FindAction("PauseMenu", throwIfNotFound: true);
+        m_Gameplay_Left = m_Gameplay.FindAction("Left", throwIfNotFound: true);
+        m_Gameplay_Right = m_Gameplay.FindAction("Right", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -273,17 +282,19 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputActionMap m_Gameplay;
     private IGameplayActions m_GameplayActionsCallbackInterface;
     private readonly InputAction m_Gameplay_Jump;
-    private readonly InputAction m_Gameplay_Move;
     private readonly InputAction m_Gameplay_SlideDash;
     private readonly InputAction m_Gameplay_PauseMenu;
+    private readonly InputAction m_Gameplay_Left;
+    private readonly InputAction m_Gameplay_Right;
     public struct GameplayActions
     {
         private @PlayerControls m_Wrapper;
         public GameplayActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Jump => m_Wrapper.m_Gameplay_Jump;
-        public InputAction @Move => m_Wrapper.m_Gameplay_Move;
         public InputAction @SlideDash => m_Wrapper.m_Gameplay_SlideDash;
         public InputAction @PauseMenu => m_Wrapper.m_Gameplay_PauseMenu;
+        public InputAction @Left => m_Wrapper.m_Gameplay_Left;
+        public InputAction @Right => m_Wrapper.m_Gameplay_Right;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -296,15 +307,18 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Jump.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnJump;
                 @Jump.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnJump;
                 @Jump.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnJump;
-                @Move.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMove;
-                @Move.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMove;
-                @Move.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnMove;
                 @SlideDash.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSlideDash;
                 @SlideDash.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSlideDash;
                 @SlideDash.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnSlideDash;
                 @PauseMenu.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPauseMenu;
                 @PauseMenu.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPauseMenu;
                 @PauseMenu.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnPauseMenu;
+                @Left.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnLeft;
+                @Left.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnLeft;
+                @Left.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnLeft;
+                @Right.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnRight;
+                @Right.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnRight;
+                @Right.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnRight;
             }
             m_Wrapper.m_GameplayActionsCallbackInterface = instance;
             if (instance != null)
@@ -312,15 +326,18 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
-                @Move.started += instance.OnMove;
-                @Move.performed += instance.OnMove;
-                @Move.canceled += instance.OnMove;
                 @SlideDash.started += instance.OnSlideDash;
                 @SlideDash.performed += instance.OnSlideDash;
                 @SlideDash.canceled += instance.OnSlideDash;
                 @PauseMenu.started += instance.OnPauseMenu;
                 @PauseMenu.performed += instance.OnPauseMenu;
                 @PauseMenu.canceled += instance.OnPauseMenu;
+                @Left.started += instance.OnLeft;
+                @Left.performed += instance.OnLeft;
+                @Left.canceled += instance.OnLeft;
+                @Right.started += instance.OnRight;
+                @Right.performed += instance.OnRight;
+                @Right.canceled += instance.OnRight;
             }
         }
     }
@@ -346,8 +363,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     public interface IGameplayActions
     {
         void OnJump(InputAction.CallbackContext context);
-        void OnMove(InputAction.CallbackContext context);
         void OnSlideDash(InputAction.CallbackContext context);
         void OnPauseMenu(InputAction.CallbackContext context);
+        void OnLeft(InputAction.CallbackContext context);
+        void OnRight(InputAction.CallbackContext context);
     }
 }

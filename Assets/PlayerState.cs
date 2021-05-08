@@ -34,6 +34,7 @@ public class PlayerState : MonoBehaviour
     private void Awake() 
     {
         playerMovement = GetComponent<PlayerMovement>();
+
         playerInputs = GetComponent<PlayerInputs>();
         playerAnimationController = GetComponent<PlayerAnimatorController>();
         playerAudioController = GetComponent<PlayerAudioController>();
@@ -90,29 +91,24 @@ public class PlayerState : MonoBehaviour
         switch(state)
         {
             case State.Moving:
-                playerMovement.Movement();
-
                 playerMovement.Gravity();
 
                 playerMovement.VelocityClamp();
             break;
 
             case State.Jumping:
-                playerMovement.Movement();
-
-                PlayerMovement.StopMoving();
-
                 playerMovement.VelocityClamp();
             break;
 
             case State.Falling:
-                playerMovement.Movement();
-
                 playerMovement.Gravity();
 
-                PlayerMovement.StopMoving();
-
                 playerMovement.VelocityClamp();
+
+                if(isGrounded)
+                {
+                    SetState(State.Idle);
+                }
             break;
             
             case State.Sliding:
@@ -126,8 +122,6 @@ public class PlayerState : MonoBehaviour
             break;
 
             case State.Idle:
-                playerMovement.Movement();
-
                 playerMovement.Gravity();
 
                 playerMovement.VelocityClamp();
@@ -145,7 +139,7 @@ public class PlayerState : MonoBehaviour
         switch(newState)
         {
             case State.Moving:
-                if(state != State.Moving)
+                if(state != State.Moving && state != State.Jumping && state != State.Sliding)
                 {
                     playerAudioController.SetMusicParameter("Slide", 0f);
 
@@ -169,11 +163,6 @@ public class PlayerState : MonoBehaviour
                     ResetAllTriggers();
 
                     playerAnimationController.SetTrigger("Jumping");
-
-                    if (GetIsGrounded())
-                    {
-                        playerMovement.Jump();
-                    }
                 }
                 break;
 
@@ -200,8 +189,6 @@ public class PlayerState : MonoBehaviour
                     playerAnimationController.SetTrigger("Sliding");
 
                     state = newState;
-
-                    playerMovement.Slide();
                 }
             break;
 
@@ -250,11 +237,6 @@ public class PlayerState : MonoBehaviour
         if(PlayerState.isGrounded != isGrounded)
         {
             PlayerState.isGrounded = isGrounded;
-
-            if(isGrounded)
-            {
-                PlayerInputs.MovePerformedGameplay();
-            }
         }
     }
 
