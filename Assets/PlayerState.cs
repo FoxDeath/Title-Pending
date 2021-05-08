@@ -172,7 +172,7 @@ public class PlayerState : MonoBehaviour
                 {
                     state = newState;
 
-                    //playerMovement.Slide();
+                    playerMovement.Slide();
                 }
             break;
 
