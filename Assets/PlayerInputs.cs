@@ -78,7 +78,12 @@ public class PlayerInputs : MonoBehaviour
     }
 
     private void Update()
-    {   
+    {
+        if(gameController.inTutorial)
+        {
+            return;
+        }
+
         if(FindObjectOfType<PlayerInputs>().isPaused)
         {
             return;
@@ -141,9 +146,16 @@ public class PlayerInputs : MonoBehaviour
             return;
         }
 
-        if(gameController.pressAnyKeyToContinue)
+        if(context.action.phase == InputActionPhase.Started)
         {
-            gameController.ContinueGame();
+            if(gameController.inTutorial)
+            {
+                gameController.TutorialStep();
+            }
+            else if(gameController.pressAnyKeyToContinue)
+            {
+                gameController.ContinueGame();
+            }
         }
     }
 

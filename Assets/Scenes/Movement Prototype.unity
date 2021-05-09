@@ -2282,6 +2282,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mendatory
       objectReference: {fileID: 0}
+    - target: {fileID: 5545830198495406059, guid: 79b99fc8ad4ba35458330ecd7531cfc2, type: 3}
+      propertyPath: inTutorial
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79b99fc8ad4ba35458330ecd7531cfc2, type: 3}
 --- !u!4 &6831458830374920449 stripped
