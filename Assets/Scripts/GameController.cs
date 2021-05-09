@@ -165,9 +165,7 @@ public class GameController : MonoBehaviour
 
         ResetTracks();
 
-        FindObjectOfType<ControlsOverlay>().Reset();
-
-        FindObjectOfType<ControlsOverlay>().isFirstGo = true;
+        FindObjectOfType<ControlsOverlay>().ResetHard();
 
         StartCoroutine(CameraLerpBehaviour());
     }

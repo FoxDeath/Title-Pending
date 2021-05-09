@@ -19,6 +19,8 @@ public class CheckpointController : MonoBehaviour
     {
         myColldier.enabled = false;
 
+                FindObjectOfType<ControlsOverlay>().ResetHard();
+
         gameController.NextSection();
     }
 }

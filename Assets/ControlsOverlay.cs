@@ -79,6 +79,18 @@ public void Reset()
     }
 }
 
+public void ResetHard()
+{
+    foreach(GameObject gameObject1 in replayClones)
+    {
+        Destroy(gameObject1);
+    }
+
+    replayClones = new List<GameObject>();
+
+    NotFirstGo();
+}
+
 private void FirstGo()
 {
     CreateReplay();
@@ -190,6 +202,16 @@ private void CreateReplay()
 
     public void SetFaceBar()
     {
+        if(gameController.inTutorial)
+        {
+            return;
+        }
+
+        if(FindObjectOfType<PlayerInputs>().isPaused)
+        {
+            return;
+        }
+
         if(PlayerInputs.GetMovePressed() > 0f)
         {
             ActionRight();
@@ -264,6 +286,16 @@ private void CreateReplay()
     
     public void SlideActionCreated()
     {
+        if(gameController.inTutorial)
+        {
+            return;
+        }
+
+        if(FindObjectOfType<PlayerInputs>().isPaused)
+        {
+            return;
+        }
+
         if(barSkillClones.Count == 0)
         {
         GameObject bar = Instantiate(slideImage, new Vector3(X.position.x, ActionY.position.y, 0), Quaternion.identity, transform);
@@ -280,6 +312,16 @@ private void CreateReplay()
 
     public void JumpActionCreated()
     {
+        if(gameController.inTutorial)
+        {
+            return;
+        }
+
+        if(FindObjectOfType<PlayerInputs>().isPaused)
+        {
+            return;
+        }
+
         if(barSkillClones.Count == 0)
         {
         GameObject bar = Instantiate(jumpImage, new Vector3(X.position.x, ActionY.position.y, 0), Quaternion.identity, transform);

@@ -72,7 +72,7 @@ public class PlayerInputs : MonoBehaviour
     {
         controls.Enable();
 
-        isPaused = false;
+        isPaused = true;
 
         blueScreen = false;
     }
