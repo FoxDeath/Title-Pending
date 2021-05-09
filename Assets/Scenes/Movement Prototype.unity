@@ -2271,6 +2271,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mendatory
       objectReference: {fileID: 0}
+    - target: {fileID: 4537349606748821273, guid: 79b99fc8ad4ba35458330ecd7531cfc2, type: 3}
+      propertyPath: m_Name
+      value: ControlOverlayParent
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79b99fc8ad4ba35458330ecd7531cfc2, type: 3}
 --- !u!4 &6831458830374920449 stripped
