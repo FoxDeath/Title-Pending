@@ -142,7 +142,7 @@ public class GameController : MonoBehaviour
             break;
 
             default:
-                currentSequenceDuration = 8f;
+                currentSequenceDuration = 10f;
             break;
         }
 
