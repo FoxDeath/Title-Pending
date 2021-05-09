@@ -30,6 +30,8 @@ public class PlayerInputs : MonoBehaviour
 
     public float timer;
 
+    [SerializeField] TMPro.TMP_Text timerText;
+
     private void Awake()
     {
         director = GameObject.Find("Player").GetComponent<PlayableDirector>();
@@ -61,6 +63,17 @@ public class PlayerInputs : MonoBehaviour
         if(timer < gameController.currentSequenceDuration)
         {
             timer += Time.deltaTime;
+
+            timerText.text = timer.ToString();
+
+            if(gameController.inInputPhase)
+            {
+                timerText.color = Color.green;
+            }
+            else
+            {
+                timerText.color = Color.red;
+            }
         }
     }
 
