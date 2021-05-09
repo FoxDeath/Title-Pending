@@ -18,11 +18,15 @@ public class PlayerMovement : MonoBehaviour
     private static Rigidbody2D myRigidbody;
     private SpriteRenderer spriteRenderer;
 
-    private void Awake()
+    private ControlsOverlay controlsOverlay = new ControlsOverlay();
+
+    private void Awake() 
     {
         myRigidbody = GetComponent<Rigidbody2D>();
 
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+
+        controlsOverlay = FindObjectOfType<ControlsOverlay>();
     }
 
     private void Start() 
@@ -58,6 +62,7 @@ public class PlayerMovement : MonoBehaviour
         {
             return;
         }
+        controlsOverlay.SetFaceBar();
 
         PlayerState.SetState(PlayerState.State.Moving);
 
@@ -83,6 +88,8 @@ public class PlayerMovement : MonoBehaviour
         myRigidbody.velocity += Vector2.up * jumpForce;
 
         jumpTimerCoroutine = StartCoroutine(JumpTimerBehaviour());
+
+        controlsOverlay.JumpActionCreated(); 
     }
 
     public void Slide()
@@ -101,7 +108,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(clampX == 0f)
         {
-            clampX = speed;
+            clampX = speed;            
         }
 
         if(clampY == 0f)
@@ -127,6 +134,7 @@ public class PlayerMovement : MonoBehaviour
         {
             PlayerMovement.SetVelocityY(0f);
         }
+        
     }
 
     static private void SetVelocityX(float x)
@@ -192,5 +200,7 @@ public class PlayerMovement : MonoBehaviour
         PlayerInputs.GetInputActions().Enable();
 
         PlayerState.SetState(PlayerState.State.Idle);
+
+        controlsOverlay.SlideActionCreated(); 
     }
 }

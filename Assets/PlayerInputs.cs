@@ -14,6 +14,8 @@ public class PlayerInputs : MonoBehaviour
 
     static private InputActionAsset inputActions;
 
+    private static ControlsOverlay controlsOverlay;
+
     private static float moveInput;
 
     private TrackAsset moveLeftTrack;
@@ -32,6 +34,8 @@ public class PlayerInputs : MonoBehaviour
 
     [SerializeField] TMPro.TMP_Text timerText;
 
+    private ControlsOverlay controlsOverlay;
+    
     private void Awake()
     {
         director = GameObject.Find("Player").GetComponent<PlayableDirector>();
@@ -51,6 +55,8 @@ public class PlayerInputs : MonoBehaviour
         jumpTrack = replay.GetOutputTrack(3);
 
         slideTrack = replay.GetOutputTrack(4);
+        
+        controlsOverlay = FindObjectOfType<ControlsOverlay>();
     }
 
     private void Start()
@@ -68,7 +74,7 @@ public class PlayerInputs : MonoBehaviour
 
             if(gameController.inInputPhase)
             {
-                timerText.color = Color.green;
+                timerText.color = Color.green;   
             }
             else
             {
@@ -126,6 +132,9 @@ public class PlayerInputs : MonoBehaviour
             clip.duration = 0.1f;
 
             clip.start = timer;
+
+            controlsOverlay.Showcase(" Jump");     
+        }
         }
     }
 
@@ -143,6 +152,8 @@ public class PlayerInputs : MonoBehaviour
             clip.duration = 0.1f;
 
             clip.start = timer;
+
+            controlsOverlay.Showcase(" Slide"); 
         }
     }
     
@@ -178,7 +189,7 @@ public class PlayerInputs : MonoBehaviour
     {
         if(!gameController.inInputPhase)
         {
-            return;
+            return;   
         }
 
         if(context.action.phase == InputActionPhase.Started)
@@ -206,7 +217,7 @@ public class PlayerInputs : MonoBehaviour
     {
         if(Mathf.Abs(moveInput) > 0.01f)
         {
-            return moveInput;
+            return moveInput;           
         }
         else
         {
