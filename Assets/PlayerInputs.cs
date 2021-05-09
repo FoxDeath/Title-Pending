@@ -30,11 +30,11 @@ public class PlayerInputs : MonoBehaviour
 
     private TimelineClip currentMoveRightClip;
 
+    private static float movePressed;
+
     public float timer;
 
     [SerializeField] TMPro.TMP_Text timerText;
-
-    private ControlsOverlay controlsOverlay;
     
     private void Awake()
     {
@@ -133,8 +133,7 @@ public class PlayerInputs : MonoBehaviour
 
             clip.start = timer;
 
-            controlsOverlay.Showcase(" Jump");     
-        }
+            controlsOverlay.JumpActionCreated(); 
         }
     }
 
@@ -153,7 +152,7 @@ public class PlayerInputs : MonoBehaviour
 
             clip.start = timer;
 
-            controlsOverlay.Showcase(" Slide"); 
+            controlsOverlay.SlideActionCreated(); 
         }
     }
     
@@ -169,6 +168,8 @@ public class PlayerInputs : MonoBehaviour
             currentMoveLeftClip = moveLeftTrack.CreateDefaultClip();
 
             currentMoveLeftClip.start = timer;
+
+            movePressed = 1f;
         }
         else if(context.action.phase == InputActionPhase.Canceled)
         {
@@ -178,6 +179,8 @@ public class PlayerInputs : MonoBehaviour
 
                 currentMoveLeftClip.start = 0;
             }
+
+            movePressed = 0f;
 
             currentMoveLeftClip.duration = gameController.currentSequenceDuration - ((gameController.currentSequenceDuration - (gameController.currentSequenceDuration - currentMoveLeftClip.start)) + (gameController.currentSequenceDuration - timer));
         
@@ -197,6 +200,8 @@ public class PlayerInputs : MonoBehaviour
             currentMoveRightClip = moveRightTrack.CreateDefaultClip();
             
             currentMoveRightClip.start = timer;
+
+            movePressed = -1f;
         }
         else if(context.action.phase == InputActionPhase.Canceled)
         {
@@ -206,6 +211,8 @@ public class PlayerInputs : MonoBehaviour
 
                 currentMoveRightClip.start = 0;
             }
+
+            movePressed = 0f;
 
             currentMoveRightClip.duration = gameController.currentSequenceDuration - ((gameController.currentSequenceDuration - (gameController.currentSequenceDuration - currentMoveRightClip.start)) + (gameController.currentSequenceDuration - timer));
 
@@ -223,6 +230,11 @@ public class PlayerInputs : MonoBehaviour
         {
             return 0f;
         }
+    }
+
+    public static float GetMovePressed()
+    {
+        return movePressed;
     }
 
     public static InputActionAsset GetInputActions()

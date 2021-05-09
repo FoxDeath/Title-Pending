@@ -19,7 +19,7 @@ List<GameObject> barSkillClones = new List<GameObject>();
 [SerializeField] GameObject lastWalkBar;
 private GameObject lastSkillBar;
 
-[SerializeField] bool isLoading = false;
+private bool isLoading = false;
 
 private LoadingBar loadingBar;
 
@@ -30,18 +30,22 @@ void Start()
     loadingBar = FindObjectOfType<LoadingBar>();
 }
 
+private void FixedUpdate() {
+    SetFaceBar();
+}
+
     public void SetFaceBar()
     {
-        if(PlayerInputs.GetMoveInput() > 0f)
+        if(PlayerInputs.GetMovePressed() > 0f)
         {
             ActionRight();
         }
-        else if(PlayerInputs.GetMoveInput() < 0f)
+        else if(PlayerInputs.GetMovePressed() < 0f)
         {
             ActionLeft();
         }
 
-        if(PlayerInputs.GetMoveInput() == 0f)
+        if(PlayerInputs.GetMovePressed() == 0f)
         {
             isLoading = false;
         }

@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     private static Rigidbody2D myRigidbody;
     private SpriteRenderer spriteRenderer;
 
-    private ControlsOverlay controlsOverlay = new ControlsOverlay();
+    private ControlsOverlay controlsOverlay;
 
     private void Awake() 
     {
@@ -62,8 +62,7 @@ public class PlayerMovement : MonoBehaviour
         {
             return;
         }
-        controlsOverlay.SetFaceBar();
-
+        
         PlayerState.SetState(PlayerState.State.Moving);
 
         FlipPlayer(direction);
@@ -88,8 +87,6 @@ public class PlayerMovement : MonoBehaviour
         myRigidbody.velocity += Vector2.up * jumpForce;
 
         jumpTimerCoroutine = StartCoroutine(JumpTimerBehaviour());
-
-        controlsOverlay.JumpActionCreated(); 
     }
 
     public void Slide()
@@ -200,7 +197,5 @@ public class PlayerMovement : MonoBehaviour
         PlayerInputs.GetInputActions().Enable();
 
         PlayerState.SetState(PlayerState.State.Idle);
-
-        controlsOverlay.SlideActionCreated(); 
     }
 }
