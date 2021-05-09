@@ -27,6 +27,8 @@ public class GameController : MonoBehaviour
     private Coroutine phaseSwitchCoroutine;
 
     [HideInInspector] public bool inInputPhase = true;
+
+    [HideInInspector] public bool inSegmentChange = false;
     
     public float currentSequenceDuration = 5f;
 
@@ -72,6 +74,8 @@ public class GameController : MonoBehaviour
     {
         currentCamPosition++;
 
+        inSegmentChange = true;
+
         StopCoroutine(phaseSwitchCoroutine);
 
         director.Stop();
@@ -102,6 +106,8 @@ public class GameController : MonoBehaviour
 
         cameraFollow.position = endValue;
         
+        inSegmentChange = false;
+
         phaseSwitchCoroutine = StartCoroutine(PhaseSwitchBehaviour());
     }
 

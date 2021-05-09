@@ -60,11 +60,11 @@ public class PlayerInputs : MonoBehaviour
 
     private void Update()
     {
-        if(timer < gameController.currentSequenceDuration)
+        if(timer < gameController.currentSequenceDuration && !gameController.inSegmentChange)
         {
             timer += Time.deltaTime;
 
-            timerText.text = (gameController.currentSequenceDuration - timer).ToString("#0.0");
+            timerText.text = (gameController.currentSequenceDuration - timer).ToString("#0.00");
 
             if(gameController.inInputPhase)
             {
@@ -74,6 +74,10 @@ public class PlayerInputs : MonoBehaviour
             {
                 timerText.color = Color.red;
             }
+        }
+        else if(gameController.inSegmentChange)
+        {
+            timerText.text = "Pending...";
         }
     }
 
