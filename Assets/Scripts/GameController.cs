@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.SceneManagement;
 using UnityEngine.Timeline;
 
 public class GameController : MonoBehaviour
@@ -78,6 +79,22 @@ public class GameController : MonoBehaviour
         ResetTracks();
     }
 
+    public void Win()
+    {
+        PlayerMovement.StopMoving();
+
+        if(phaseSwitchCoroutine != null)
+        {
+            StopCoroutine(phaseSwitchCoroutine);
+        }
+
+        director.Stop();
+
+        ResetTracks();
+
+        SceneManager.LoadScene(0);
+    }
+
     public void NextSection()
     {
         PlayerMovement.StopMoving();
@@ -138,11 +155,11 @@ public class GameController : MonoBehaviour
             break;
 
             case 3:
-                currentSequenceDuration = 5f;
+                currentSequenceDuration = 8f;
             break;
 
             default:
-                currentSequenceDuration = 10f;
+                currentSequenceDuration = 5f;
             break;
         }
 

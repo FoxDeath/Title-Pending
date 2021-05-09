@@ -235,7 +235,7 @@ MonoBehaviour:
   CollisionTag: 
   Event: event:/Music/MainSoundtrack
   PlayEvent: 1
-  StopEvent: 0
+  StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
@@ -823,6 +823,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5545830198495406058}
   - component: {fileID: 5545830198495406059}
+  - component: {fileID: 598106356}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -861,6 +862,14 @@ MonoBehaviour:
   pressAnyKeyToContinue: 1
   currentSequenceDuration: 5
   camLerpDuration: 3
+--- !u!81 &598106356
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5545830198495406057}
+  m_Enabled: 1
 --- !u!1 &6797644511927160923
 GameObject:
   m_ObjectHideFlags: 0
