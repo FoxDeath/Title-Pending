@@ -64,6 +64,23 @@ public class PlayerInputs : MonoBehaviour
         }
     }
 
+    public void FinaliseClips()
+    {
+        if(currentMoveLeftClip != null)
+        {
+            currentMoveLeftClip.duration = gameController.currentSequenceDuration - ((gameController.currentSequenceDuration - (gameController.currentSequenceDuration - currentMoveLeftClip.start)));
+            
+            currentMoveLeftClip = null;
+        }
+        
+        if(currentMoveRightClip != null)
+        {
+            currentMoveRightClip.duration = gameController.currentSequenceDuration - ((gameController.currentSequenceDuration - (gameController.currentSequenceDuration - currentMoveRightClip.start)));
+            
+            currentMoveRightClip = null;
+        }
+    }
+
     public void JumpPerformed(InputAction.CallbackContext context)
     {
         if(!gameController.inInputPhase)
@@ -113,7 +130,16 @@ public class PlayerInputs : MonoBehaviour
         }
         else if(context.action.phase == InputActionPhase.Canceled)
         {
+            if(currentMoveLeftClip == null && gameController.inInputPhase)
+            {
+                currentMoveLeftClip = moveLeftTrack.CreateDefaultClip();
+
+                currentMoveLeftClip.start = 0;
+            }
+
             currentMoveLeftClip.duration = gameController.currentSequenceDuration - ((gameController.currentSequenceDuration - (gameController.currentSequenceDuration - currentMoveLeftClip.start)) + (gameController.currentSequenceDuration - timer));
+        
+            currentMoveLeftClip = null;
         }
     }
     
@@ -132,7 +158,16 @@ public class PlayerInputs : MonoBehaviour
         }
         else if(context.action.phase == InputActionPhase.Canceled)
         {
+            if(currentMoveRightClip == null && gameController.inInputPhase)
+            {
+                currentMoveRightClip = moveRightTrack.CreateDefaultClip();
+
+                currentMoveRightClip.start = 0;
+            }
+
             currentMoveRightClip.duration = gameController.currentSequenceDuration - ((gameController.currentSequenceDuration - (gameController.currentSequenceDuration - currentMoveRightClip.start)) + (gameController.currentSequenceDuration - timer));
+
+            currentMoveRightClip = null;    
         }
     }
 
