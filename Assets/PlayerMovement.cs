@@ -187,13 +187,6 @@ public class PlayerMovement : MonoBehaviour
 
         AddVelocity(Vector2.right * PlayerMovement.facing * slideSpeed);
 
-        if(PlayerPhysicsCalculations.hitSlide)
-        {
-            slideTime += 0.6f;
-            
-            AddVelocity(Vector2.right * PlayerMovement.facing * slideSpeed * 3f);
-        }
-
         yield return new WaitForSeconds(slideTime);
 
         PlayerInputs.GetInputActions().Enable();

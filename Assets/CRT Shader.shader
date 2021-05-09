@@ -59,7 +59,7 @@ Shader "Custom/CRT Shader"
             _InputSize = _TextureSize;
             _Factor = _Texcoord.x * _TextureSize.x * _OutputSize.x / _InputSize.x;
          
-            //float4 ScreenGamma = pow(tex2D(_MainTex, _Texcoord), _Gamma);
+            float4 ScreenGamma = pow(tex2D(_MainTex, _Texcoord), _Gamma);
          
             #ifdef CURVATURE
             float2 xy = RadialDistortion(_Texcoord);
@@ -84,8 +84,8 @@ Shader "Custom/CRT Shader"
             float3 dotMaskWeights = lerp(rgb1, rgb2, floor(fmod(_Factor, _dotWeight)));
             res *= dotMaskWeights;
          
-            return float4(pow(res, float3(1.0f / _Gamma, 1.0f / _Gamma, 1.0f / _Gamma)), 1.0f);
-            //return float4(pow(res, float3(1.0f / ScreenGamma.x, 1.0f / ScreenGamma.y, 1.0f / ScreenGamma.z)), 1.0f);
+            //return float4(pow(res, float3(1.0f / _Gamma, 1.0f / _Gamma, 1.0f / _Gamma)), 1.0f);
+            return float4(pow(res, float3(1.0f / ScreenGamma.x, 1.0f / ScreenGamma.y, 1.0f / ScreenGamma.z)), 1.0f);
          
          
         }

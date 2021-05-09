@@ -42,7 +42,10 @@ public class PlayerPhysicsCalculations : MonoBehaviour
         {
             PlayerState.SetIsGrounded(false);
 
-            PlayerState.SetState(PlayerState.State.Falling);
+            if(PlayerState.GetState() != PlayerState.State.Sliding)
+            {
+                PlayerState.SetState(PlayerState.State.Falling);
+            }
         }
     }
 }
