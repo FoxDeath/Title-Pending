@@ -35,7 +35,9 @@ public class PlayerInputs : MonoBehaviour
     public float timer;
 
     [SerializeField] TMPro.TMP_Text timerText;
-    
+
+    [SerializeField] GameObject pauseMenu;
+
     private void Awake()
     {
         director = GameObject.Find("Player").GetComponent<PlayableDirector>();
@@ -218,6 +220,11 @@ public class PlayerInputs : MonoBehaviour
 
             currentMoveRightClip = null;    
         }
+    }
+
+    public void PausePerformed(InputAction.CallbackContext context)
+    {
+        pauseMenu.SetActive(true);
     }
 
     public static float GetMoveInput()

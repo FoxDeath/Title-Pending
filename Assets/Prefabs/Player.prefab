@@ -137,7 +137,19 @@ MonoBehaviour:
     m_ActionId: 2ec5765f-7837-4772-a2f5-0cd68c9cb50a
     m_ActionName: Gameplay/Slide/Dash[/Keyboard/shift]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8810842579624239358}
+        m_TargetAssemblyTypeName: PlayerInputs, Assembly-CSharp
+        m_MethodName: PausePerformed
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 6c71b0dd-040c-4c8b-8205-e1cb7328807f
     m_ActionName: Gameplay/PauseMenu[/Keyboard/escape]
   - m_PersistentCalls:
@@ -237,6 +249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: 0
   timerText: {fileID: 0}
+  pauseMenu: {fileID: 0}
 --- !u!114 &8810842579624239346
 MonoBehaviour:
   m_ObjectHideFlags: 0
