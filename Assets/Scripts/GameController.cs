@@ -80,6 +80,8 @@ public class GameController : MonoBehaviour
             inInputPhase = false;
 
             director.Play();
+
+            playerInputs.FinaliseClips();
         }
         else
         {
