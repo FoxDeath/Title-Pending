@@ -7,6 +7,12 @@ using UnityEngine.Timeline;
 
 public class GameController : MonoBehaviour
 {
+    private GameObject tut1;
+    
+    private GameObject tut2;
+    
+    private GameObject tut3;
+
     private Transform player;
 
     private List<Transform> CamPositions = new List<Transform>();
@@ -36,6 +42,8 @@ public class GameController : MonoBehaviour
     [HideInInspector] public bool inSegmentChange = false;
 
     [HideInInspector] public bool pressAnyKeyToContinue = true;
+
+    public bool inTutorial = false;
     
     public float currentSequenceDuration = 5f;
 
@@ -43,8 +51,22 @@ public class GameController : MonoBehaviour
 
     private int currentCamPosition = 0;
 
+    private bool started = false;
+
     void Awake()
     {
+        tut1 = GameObject.Find("Mendatory").transform.Find("LoadingBarCanvas 1").Find("Tutorial1").gameObject;
+
+        tut1.SetActive(false);
+        
+        tut2 = GameObject.Find("Mendatory").transform.Find("LoadingBarCanvas 1").Find("Tutorial2").gameObject;
+
+        tut2.SetActive(false);
+        
+        tut3 = GameObject.Find("Mendatory").transform.Find("LoadingBarCanvas 1").Find("Tutorial3").gameObject;
+
+        tut3.SetActive(false);
+
         player = GameObject.Find("Player").transform;
 
         Transform camPositions = GameObject.Find("CamPositions").transform;
@@ -77,6 +99,38 @@ public class GameController : MonoBehaviour
         director.Stop();
 
         ResetTracks();
+    }
+    
+    private void Update()
+    {
+        if(!tut1.activeInHierarchy && inTutorial && !started)
+        {
+            started = true;
+
+            tut1.SetActive(true);
+        }
+    }
+
+    public void TutorialStep()
+    {
+        if(tut1.activeSelf)
+        {
+            tut1.SetActive(false);
+
+            tut2.SetActive(true);
+        }
+        else if(tut2.activeSelf)
+        {
+            tut2.SetActive(false);
+
+            tut3.SetActive(true);
+        }
+        else if(tut3.activeSelf)
+        {
+            tut3.SetActive(false);
+
+            inTutorial = false;
+        }
     }
 
     public void Win()

@@ -66,6 +66,11 @@ public class PlayerInputs : MonoBehaviour
 
     private void Update()
     {
+        if(gameController.inTutorial)
+        {
+            return;
+        }
+
         if(timer < gameController.currentSequenceDuration && !gameController.inSegmentChange && !gameController.pressAnyKeyToContinue)
         {
             timer += Time.deltaTime;
@@ -112,9 +117,16 @@ public class PlayerInputs : MonoBehaviour
 
     public void ContinueGamePerformed(InputAction.CallbackContext context)
     {
-        if(gameController.pressAnyKeyToContinue)
+        if(context.action.phase == InputActionPhase.Started)
         {
-            gameController.ContinueGame();
+            if(gameController.inTutorial)
+            {
+                gameController.TutorialStep();
+            }
+            else if(gameController.pressAnyKeyToContinue)
+            {
+                gameController.ContinueGame();
+            }
         }
     }
 
