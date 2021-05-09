@@ -168,6 +168,8 @@ public class GameController : MonoBehaviour
         phaseSwitchCoroutine = StartCoroutine(PhaseSwitchBehaviour());
 
         inInputPhase = true;
+
+        StartCoroutine(FindObjectOfType<ControlsOverlay>().MoveX());
     }
 
     private IEnumerator PhaseSwitchBehaviour()

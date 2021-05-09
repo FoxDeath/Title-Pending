@@ -12,7 +12,7 @@ public class LoadingBar : MonoBehaviour
 
     public GameObject lastBitSpot;
 
-    private float Timer = 0.5f;
+    private float Timer = 0.01f;
 
     private ControlsOverlay controlsOverlay;
 
@@ -23,7 +23,7 @@ public class LoadingBar : MonoBehaviour
 
     void Update()
     {
-        if(controlsOverlay.GetIsLoading())
+        if(controlsOverlay.GetIsLoading() && gameObject == controlsOverlay.lastWalkBar)
         {
              SpawnLoadBar();
         }
@@ -43,7 +43,7 @@ public class LoadingBar : MonoBehaviour
         if (Timer <= 0f)
         {
         GameObject barBit = Instantiate(loadingBit,GetLastSpot(),Quaternion.identity,transform);
-         Timer = 0.5f;
+         Timer = 0.01f;
          barBitClones.Add(barBit);
         }
         lastBitSpot = barBitClones.Last();
@@ -52,10 +52,10 @@ public class LoadingBar : MonoBehaviour
 
     public Vector3 GetLastSpot()
     {
-        return new Vector3(lastBitSpot.transform.position.x + 1f,lastBitSpot.transform.position.y,lastBitSpot.transform.position.z);
+        return new Vector3(lastBitSpot.transform.position.x + 0.1f,lastBitSpot.transform.position.y,lastBitSpot.transform.position.z);
     }
     public Vector3 GetLastSpotForLoad()
     {
-        return new Vector3(lastBitSpot.transform.position.x + 1.5f,lastBitSpot.transform.position.y,lastBitSpot.transform.position.z);
+        return new Vector3(controlsOverlay.X.position.x + 0.1f,lastBitSpot.transform.position.y,lastBitSpot.transform.position.z);
     }
 }

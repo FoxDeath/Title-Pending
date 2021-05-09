@@ -10,7 +10,7 @@ public class ControlsOverlay : MonoBehaviour
 [SerializeField] RectTransform ActionY;
 [SerializeField] RectTransform XStart;
 [SerializeField] RectTransform XEnd;
-[SerializeField] RectTransform X;
+[SerializeField] public RectTransform X;
 
 private Transform loadingStartSpot;
 private Transform loadingNextSpot;
@@ -22,14 +22,14 @@ private Transform loadingNextSpot;
 List<GameObject> barWalkClones = new List<GameObject>();
 List<GameObject> barSkillClones = new List<GameObject>();
 
-private GameObject lastWalkBar;
+public GameObject lastWalkBar;
 private GameObject lastSkillBar;
 
 private bool isLoading = false;
 
 private LoadingBar loadingBar;
 
-private LoadingBarController loadingBarController;
+private GameController gameController;
 
 #endregion
 
@@ -37,7 +37,7 @@ void Start()
 {
     loadingBar = FindObjectOfType<LoadingBar>();
 
-    loadingBarController = FindObjectOfType<LoadingBarController>();
+    gameController = FindObjectOfType<GameController>();
 }
 
 private void FixedUpdate() 
@@ -45,11 +45,27 @@ private void FixedUpdate()
     SetFaceBar();
 }
 
+public IEnumerator MoveX()
+{
+        float time = 0;
+
+        while (time < gameController.currentSequenceDuration)
+        {
+            X.position = Vector3.Lerp(XStart.position, XEnd.position, time / gameController.currentSequenceDuration);
+
+            time += Time.deltaTime;
+
+            yield return null;
+        }
+}
+
 public void ResetCanvas()
 {
     barWalkClones = new List<GameObject>();
 
     barSkillClones = new List<GameObject>();
+
+    X.position = XStart.position;
 
     foreach(Transform child in transform)
     {
@@ -90,7 +106,7 @@ public void ResetCanvas()
         }
         else if (barWalkClones.Count != 0 && !GetIsLoading())
         {
-        GameObject bar = Instantiate(loadBarRight, loadingBar.GetLastSpotForLoad(), Quaternion.identity, transform);
+        GameObject bar = Instantiate(loadBarRight, new Vector3(X.position.x, MoveY.position.y, 0), Quaternion.identity, transform);
         barWalkClones.Add(bar);
         lastWalkBar = barWalkClones.Last();
         isLoading = true;
@@ -119,7 +135,7 @@ public void ResetCanvas()
 
         else if (barWalkClones.Count != 0 && !GetIsLoading())
         {
-        GameObject bar = Instantiate(loadBarLeft,loadingBar.GetLastSpotForLoad(), Quaternion.identity, transform);
+        GameObject bar = Instantiate(loadBarLeft,new Vector3(X.position.x, MoveY.position.y, 0), Quaternion.identity, transform);
         barWalkClones.Add(bar);
         lastWalkBar = barWalkClones.Last();
         isLoading = true;
