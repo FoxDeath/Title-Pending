@@ -6,6 +6,12 @@ using System.Linq;
 public class ControlsOverlay : MonoBehaviour
 {
 #region Attributes
+[SerializeField] RectTransform MoveY;
+[SerializeField] RectTransform ActionY;
+[SerializeField] RectTransform XStart;
+[SerializeField] RectTransform XEnd;
+[SerializeField] RectTransform X;
+
 private Transform loadingStartSpot;
 private Transform loadingNextSpot;
 [SerializeField] GameObject loadBarRight;
@@ -16,22 +22,39 @@ private Transform loadingNextSpot;
 List<GameObject> barWalkClones = new List<GameObject>();
 List<GameObject> barSkillClones = new List<GameObject>();
 
-[SerializeField] GameObject lastWalkBar;
+private GameObject lastWalkBar;
 private GameObject lastSkillBar;
 
 private bool isLoading = false;
 
 private LoadingBar loadingBar;
 
+private LoadingBarController loadingBarController;
+
 #endregion
 
 void Start()
 {
     loadingBar = FindObjectOfType<LoadingBar>();
+
+    loadingBarController = FindObjectOfType<LoadingBarController>();
 }
 
-private void FixedUpdate() {
+private void FixedUpdate() 
+{
     SetFaceBar();
+}
+
+public void ResetCanvas()
+{
+    barWalkClones = new List<GameObject>();
+
+    barSkillClones = new List<GameObject>();
+
+    foreach(Transform child in transform)
+    {
+        Destroy(child.gameObject);
+    }
 }
 
     public void SetFaceBar()
@@ -53,9 +76,9 @@ private void FixedUpdate() {
     
     public void ActionRight()
     {
-       if(barWalkClones.Count == 0)
+       if(barWalkClones.Count == 0 && !GetIsLoading())
         {
-        GameObject bar = Instantiate(loadBarRight, new Vector3(60, 120, 0), Quaternion.identity, transform);
+        GameObject bar = Instantiate(loadBarRight, new Vector3(X.position.x, MoveY.position.y, 0), Quaternion.identity, transform);
         barWalkClones.Add(bar);
         lastWalkBar = barWalkClones.Last();
         isLoading = true;
@@ -81,9 +104,9 @@ private void FixedUpdate() {
 
     public void ActionLeft()
     {
-       if(barWalkClones.Count == 0)
+       if(barWalkClones.Count == 0 && !GetIsLoading())
         {
-        GameObject bar = Instantiate(loadBarLeft, new Vector3(60, 120, 0), Quaternion.identity, transform);
+        GameObject bar = Instantiate(loadBarLeft, new Vector3(X.position.x, MoveY.position.y, 0), Quaternion.identity, transform);
         barWalkClones.Add(bar);
         lastWalkBar = barWalkClones.Last();
         isLoading = true;
@@ -112,13 +135,13 @@ private void FixedUpdate() {
     {
         if(barSkillClones.Count == 0)
         {
-        GameObject bar = Instantiate(slideImage, new Vector3(60, 60, 0), Quaternion.identity, transform);
+        GameObject bar = Instantiate(slideImage, new Vector3(X.position.x, ActionY.position.y, 0), Quaternion.identity, transform);
         barSkillClones.Add(bar);
         lastSkillBar = barSkillClones.Last();
         }
         else
         {
-        GameObject bar = Instantiate(slideImage, new Vector3(lastSkillBar.transform.position.x +100,60, 0), Quaternion.identity, transform);
+        GameObject bar = Instantiate(slideImage, new Vector3(X.position.x,ActionY.position.y, 0), Quaternion.identity, transform);
         barSkillClones.Add(bar);
         lastSkillBar = barSkillClones.Last();
         }
@@ -128,13 +151,13 @@ private void FixedUpdate() {
     {
         if(barSkillClones.Count == 0)
         {
-        GameObject bar = Instantiate(jumpImage, new Vector3(60, 60, 0), Quaternion.identity, transform);
+        GameObject bar = Instantiate(jumpImage, new Vector3(X.position.x, ActionY.position.y, 0), Quaternion.identity, transform);
         barSkillClones.Add(bar);
         lastSkillBar = barSkillClones.Last();
         }
         else
         {
-        GameObject bar = Instantiate(jumpImage, new Vector3(lastSkillBar.transform.position.x +100,60, 0), Quaternion.identity, transform);
+        GameObject bar = Instantiate(jumpImage, new Vector3(X.position.x,ActionY.position.y, 0), Quaternion.identity, transform);
         barSkillClones.Add(bar);
         lastSkillBar = barSkillClones.Last();
         }

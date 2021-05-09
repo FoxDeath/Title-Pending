@@ -820,17 +820,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 837775429971038513, guid: f14098c6a94598a499f007cc92e421e2, type: 3}
   m_PrefabInstance: {fileID: 810566606}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &818525893 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 818525893, guid: 79b99fc8ad4ba35458330ecd7531cfc2, type: 3}
-  m_PrefabInstance: {fileID: 4277780576254913233}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 818525888}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 891c1a3ede7592149949fb85961efa48, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &874283406
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2351,7 +2340,7 @@ PrefabInstance:
     - target: {fileID: 8810842579624239358, guid: 1f02eb8f1e5d3e24b96db70591413cf2, type: 3}
       propertyPath: pauseMenu
       value: 
-      objectReference: {fileID: 818525888}
+      objectReference: {fileID: 0}
     - target: {fileID: 8810842579624239358, guid: 1f02eb8f1e5d3e24b96db70591413cf2, type: 3}
       propertyPath: timerText
       value: 

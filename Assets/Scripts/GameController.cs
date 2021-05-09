@@ -111,6 +111,8 @@ public class GameController : MonoBehaviour
 
         ResetTracks();
 
+        FindObjectOfType<ControlsOverlay>().ResetCanvas();
+
         StartCoroutine(CameraLerpBehaviour());
     }
 
@@ -199,6 +201,8 @@ public class GameController : MonoBehaviour
     private void ResetSegment()
     {
         player.position = currentSavedPos;
+
+        FindObjectOfType<ControlsOverlay>().ResetCanvas();
 
         pressAnyKeyToContinue = true;
     }
