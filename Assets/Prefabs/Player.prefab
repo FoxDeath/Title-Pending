@@ -172,6 +172,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: ea6a443a-26e5-4754-bbf4-8379a678a82d
     m_ActionName: Gameplay/Right[/Keyboard/d,/Keyboard/rightArrow,/DualShock4GamepadHID/leftStick/right]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8810842579624239358}
+        m_TargetAssemblyTypeName: PlayerInputs, Assembly-CSharp
+        m_MethodName: ContinueGamePerformed
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 1f3df806-12d9-455a-9203-6cc94587822b
+    m_ActionName: Gameplay/AnyKey[/Keyboard/anyKey]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Gameplay
