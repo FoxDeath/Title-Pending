@@ -15,6 +15,7 @@ public class PauseMenuController : MonoBehaviour
 
     public void Restart()
     {
+        FindObjectOfType<GameController>().inTutorial = true;
         FindObjectOfType<PlayerInputs>().isPaused = false;
         FindObjectOfType<ControlsOverlay>().isFirstGo = true;
         FindObjectOfType<GameController>().ResetMenu();
