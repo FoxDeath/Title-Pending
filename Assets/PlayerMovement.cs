@@ -18,11 +18,15 @@ public class PlayerMovement : MonoBehaviour
     private static Rigidbody2D myRigidbody;
     private SpriteRenderer spriteRenderer;
 
-    private void Awake()
+    private ControlsOverlay controlsOverlay;
+
+    private void Awake() 
     {
         myRigidbody = GetComponent<Rigidbody2D>();
 
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+
+        controlsOverlay = FindObjectOfType<ControlsOverlay>();
     }
 
     private void Start() 
@@ -58,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
         {
             return;
         }
-
+        
         PlayerState.SetState(PlayerState.State.Moving);
 
         FlipPlayer(direction);
@@ -101,7 +105,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(clampX == 0f)
         {
-            clampX = speed;
+            clampX = speed;            
         }
 
         if(clampY == 0f)
@@ -127,6 +131,7 @@ public class PlayerMovement : MonoBehaviour
         {
             PlayerMovement.SetVelocityY(0f);
         }
+        
     }
 
     static private void SetVelocityX(float x)

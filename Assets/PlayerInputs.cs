@@ -14,6 +14,8 @@ public class PlayerInputs : MonoBehaviour
 
     static private InputActionAsset inputActions;
 
+    private static ControlsOverlay controlsOverlay;
+
     private static float moveInput;
 
     private TrackAsset moveLeftTrack;
@@ -28,10 +30,12 @@ public class PlayerInputs : MonoBehaviour
 
     private TimelineClip currentMoveRightClip;
 
+    private static float movePressed;
+
     public float timer;
 
     [SerializeField] TMPro.TMP_Text timerText;
-
+    
     private void Awake()
     {
         director = GameObject.Find("Player").GetComponent<PlayableDirector>();
@@ -51,6 +55,8 @@ public class PlayerInputs : MonoBehaviour
         jumpTrack = replay.GetOutputTrack(3);
 
         slideTrack = replay.GetOutputTrack(4);
+        
+        controlsOverlay = FindObjectOfType<ControlsOverlay>();
     }
 
     private void Start()
@@ -68,7 +74,7 @@ public class PlayerInputs : MonoBehaviour
 
             if(gameController.inInputPhase)
             {
-                timerText.color = Color.green;
+                timerText.color = Color.green;   
             }
             else
             {
@@ -126,6 +132,8 @@ public class PlayerInputs : MonoBehaviour
             clip.duration = 0.1f;
 
             clip.start = timer;
+
+            controlsOverlay.JumpActionCreated(); 
         }
     }
 
@@ -143,6 +151,8 @@ public class PlayerInputs : MonoBehaviour
             clip.duration = 0.1f;
 
             clip.start = timer;
+
+            controlsOverlay.SlideActionCreated(); 
         }
     }
     
@@ -158,6 +168,8 @@ public class PlayerInputs : MonoBehaviour
             currentMoveLeftClip = moveLeftTrack.CreateDefaultClip();
 
             currentMoveLeftClip.start = timer;
+
+            movePressed = 1f;
         }
         else if(context.action.phase == InputActionPhase.Canceled)
         {
@@ -167,6 +179,8 @@ public class PlayerInputs : MonoBehaviour
 
                 currentMoveLeftClip.start = 0;
             }
+
+            movePressed = 0f;
 
             currentMoveLeftClip.duration = gameController.currentSequenceDuration - ((gameController.currentSequenceDuration - (gameController.currentSequenceDuration - currentMoveLeftClip.start)) + (gameController.currentSequenceDuration - timer));
         
@@ -178,7 +192,7 @@ public class PlayerInputs : MonoBehaviour
     {
         if(!gameController.inInputPhase)
         {
-            return;
+            return;   
         }
 
         if(context.action.phase == InputActionPhase.Started)
@@ -186,6 +200,8 @@ public class PlayerInputs : MonoBehaviour
             currentMoveRightClip = moveRightTrack.CreateDefaultClip();
             
             currentMoveRightClip.start = timer;
+
+            movePressed = -1f;
         }
         else if(context.action.phase == InputActionPhase.Canceled)
         {
@@ -195,6 +211,8 @@ public class PlayerInputs : MonoBehaviour
 
                 currentMoveRightClip.start = 0;
             }
+
+            movePressed = 0f;
 
             currentMoveRightClip.duration = gameController.currentSequenceDuration - ((gameController.currentSequenceDuration - (gameController.currentSequenceDuration - currentMoveRightClip.start)) + (gameController.currentSequenceDuration - timer));
 
@@ -206,12 +224,17 @@ public class PlayerInputs : MonoBehaviour
     {
         if(Mathf.Abs(moveInput) > 0.01f)
         {
-            return moveInput;
+            return moveInput;           
         }
         else
         {
             return 0f;
         }
+    }
+
+    public static float GetMovePressed()
+    {
+        return movePressed;
     }
 
     public static InputActionAsset GetInputActions()
