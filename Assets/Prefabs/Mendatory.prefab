@@ -1810,6 +1810,10 @@ PrefabInstance:
       propertyPath: ActionY
       value: 
       objectReference: {fileID: 1551260838}
+    - target: {fileID: 2844290548486001283, guid: 26aaaef9dd5b6554d80ca35a2ef6e0de, type: 3}
+      propertyPath: isFirstGo
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2844290548486001284, guid: 26aaaef9dd5b6554d80ca35a2ef6e0de, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

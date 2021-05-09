@@ -111,7 +111,9 @@ public class GameController : MonoBehaviour
 
         ResetTracks();
 
-        FindObjectOfType<ControlsOverlay>().ResetCanvas();
+        FindObjectOfType<ControlsOverlay>().Reset();
+
+        FindObjectOfType<ControlsOverlay>().isFirstGo = true;
 
         StartCoroutine(CameraLerpBehaviour());
     }
@@ -204,7 +206,7 @@ public class GameController : MonoBehaviour
     {
         player.position = currentSavedPos;
 
-        FindObjectOfType<ControlsOverlay>().ResetCanvas();
+        FindObjectOfType<ControlsOverlay>().Reset();
 
         pressAnyKeyToContinue = true;
     }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.UI;
 
 public class ControlsOverlay : MonoBehaviour
 {
@@ -22,6 +23,8 @@ private Transform loadingNextSpot;
 List<GameObject> barWalkClones = new List<GameObject>();
 List<GameObject> barSkillClones = new List<GameObject>();
 
+public List<GameObject> replayClones = new List<GameObject>();
+
 public GameObject lastWalkBar;
 private GameObject lastSkillBar;
 
@@ -31,6 +34,8 @@ private LoadingBar loadingBar;
 
 private GameController gameController;
 
+public bool isFirstGo;
+
 #endregion
 
 void Start()
@@ -38,6 +43,8 @@ void Start()
     loadingBar = FindObjectOfType<LoadingBar>();
 
     gameController = FindObjectOfType<GameController>();
+
+    isFirstGo = true;
 }
 
 private void FixedUpdate() 
@@ -59,17 +66,125 @@ public IEnumerator MoveX()
         }
 }
 
-public void ResetCanvas()
+public void Reset()
 {
+    if(isFirstGo)
+    {
+        isFirstGo = false;
+        FirstGo();
+    }
+    else
+    {
+        NotFirstGo();
+    }
+}
+
+private void FirstGo()
+{
+    CreateReplay();
+}
+
+private void NotFirstGo()
+{
+    ResetCanvas();
+}
+
+private void ResetCanvas()
+{
+    foreach(GameObject gameObject1 in replayClones)
+    {
+        Destroy(gameObject1);
+    }
+
+    replayClones = new List<GameObject>();
+
+    foreach(GameObject gameObject in barWalkClones)
+    {
+        foreach(Transform child in gameObject.transform)
+        {
+            replayClones.Add(child.gameObject);
+        }
+    }
+
+    foreach(GameObject gameObject in barSkillClones)
+    {
+        replayClones.Add(gameObject);
+    }
+
     barWalkClones = new List<GameObject>();
 
     barSkillClones = new List<GameObject>();
 
     X.position = XStart.position;
 
-    foreach(Transform child in transform)
+    Color transparent = new Color(1, 1, 1, .1f);
+
+    foreach(GameObject gameObject in replayClones)
     {
-        Destroy(child.gameObject);
+        Image image;
+
+        gameObject.TryGetComponent<Image>(out image);
+
+        if(image != null)
+        {
+            image.color = transparent;
+        }
+        else
+        {
+            image = gameObject.GetComponentInChildren<Image>();
+            
+            if(image != null)
+            {
+                image.color = transparent;
+            }
+        }
+    }
+}
+
+private void CreateReplay()
+{
+    replayClones = new List<GameObject>();
+
+    foreach(GameObject gameObject in barWalkClones)
+    {
+        foreach(Transform child in gameObject.transform)
+        {
+            replayClones.Add(child.gameObject);
+        }
+    }
+
+    foreach(GameObject gameObject in barSkillClones)
+    {
+        replayClones.Add(gameObject);
+    }
+
+    barWalkClones = new List<GameObject>();
+
+    barSkillClones = new List<GameObject>();
+
+    X.position = XStart.position;
+
+    Color transparent = new Color(1, 1, 1, .1f);
+
+    foreach(GameObject gameObject in replayClones)
+    {
+        Image image;
+
+        gameObject.TryGetComponent<Image>(out image);
+
+        if(image != null)
+        {
+            image.color = transparent;
+        }
+        else
+        {
+            image = gameObject.GetComponentInChildren<Image>();
+            
+            if(image != null)
+            {
+                image.color = transparent;
+            }
+        }
     }
 }
 

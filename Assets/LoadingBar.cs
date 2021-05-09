@@ -52,7 +52,7 @@ public class LoadingBar : MonoBehaviour
 
     public Vector3 GetLastSpot()
     {
-        return new Vector3(lastBitSpot.transform.position.x + 0.1f,lastBitSpot.transform.position.y,lastBitSpot.transform.position.z);
+        return new Vector3(controlsOverlay.X.position.x,lastBitSpot.transform.position.y,lastBitSpot.transform.position.z);
     }
     public Vector3 GetLastSpotForLoad()
     {
