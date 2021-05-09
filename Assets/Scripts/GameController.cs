@@ -6,6 +6,10 @@ using UnityEngine.Timeline;
 
 public class GameController : MonoBehaviour
 {
+    private List<Transform> CamPositions = new List<Transform>();
+
+    private Transform cameraFollow;
+
     private PlayableDirector director;
 
     private PlayerInputs playerInputs;
@@ -26,8 +30,21 @@ public class GameController : MonoBehaviour
     
     public float currentSequenceDuration = 5f;
 
+    public float camLerpDuration = 3f;
+
+    private int currentCamPosition = 0;
+
     void Awake()
     {
+        Transform camPositions = GameObject.Find("CamPositions").transform;
+
+        for(int i = 0; i < camPositions.childCount; i++)
+        {
+            CamPositions.Add(camPositions.GetChild(i));
+        }
+
+        cameraFollow = GameObject.Find("Mendatory").transform.Find("CameraFollow");
+
         director = GameObject.Find("Player").GetComponent<PlayableDirector>();
 
         playerInputs = FindObjectOfType<PlayerInputs>();
@@ -47,26 +64,45 @@ public class GameController : MonoBehaviour
         director.Stop();
 
         phaseSwitchCoroutine = StartCoroutine(PhaseSwitchBehaviour());
+            
+        ResetTracks();
+    }
+
+    public void NextSection()
+    {
+        currentCamPosition++;
+
+        StopCoroutine(phaseSwitchCoroutine);
+
+        director.Stop();
+
+        inInputPhase = true;
+
+        ResetTracks();
+
+        StartCoroutine(CameraLerpBehaviour());
+    }
+
+    private IEnumerator CameraLerpBehaviour()
+    {
+        float time = 0;
+
+        Vector3 startValue = cameraFollow.position;
         
-        foreach(TimelineClip clip in moveLeftTrack.GetClips())
+        Vector3 endValue = CamPositions[currentCamPosition].position;
+
+        while (time < camLerpDuration)
         {
-            moveLeftTrack.DeleteClip(clip);
+            cameraFollow.position = Vector3.Lerp(startValue, endValue, time / camLerpDuration);
+
+            time += Time.deltaTime;
+
+            yield return null;
         }
 
-        foreach(TimelineClip clip in moveRightTrack.GetClips())
-        {
-            moveRightTrack.DeleteClip(clip);
-        }
-
-        foreach(TimelineClip clip in jumpTrack.GetClips())
-        {
-            jumpTrack.DeleteClip(clip);
-        }
-
-        foreach(TimelineClip clip in slideTrack.GetClips())
-        {
-            slideTrack.DeleteClip(clip);
-        }
+        cameraFollow.position = endValue;
+        
+        phaseSwitchCoroutine = StartCoroutine(PhaseSwitchBehaviour());
     }
 
     private IEnumerator PhaseSwitchBehaviour()
@@ -88,28 +124,33 @@ public class GameController : MonoBehaviour
             director.Stop();
 
             inInputPhase = true;
-
-            foreach(TimelineClip clip in moveLeftTrack.GetClips())
-            {
-                moveLeftTrack.DeleteClip(clip);
-            }
-
-            foreach(TimelineClip clip in moveRightTrack.GetClips())
-            {
-                moveRightTrack.DeleteClip(clip);
-            }
-
-            foreach(TimelineClip clip in jumpTrack.GetClips())
-            {
-                jumpTrack.DeleteClip(clip);
-            }
-
-            foreach(TimelineClip clip in slideTrack.GetClips())
-            {
-                slideTrack.DeleteClip(clip);
-            }
+            
+            ResetTracks();
         }
 
         phaseSwitchCoroutine = StartCoroutine(PhaseSwitchBehaviour());
+    }
+
+    private void ResetTracks()
+    {
+        foreach(TimelineClip clip in moveLeftTrack.GetClips())
+        {
+            moveLeftTrack.DeleteClip(clip);
+        }
+
+        foreach(TimelineClip clip in moveRightTrack.GetClips())
+        {
+            moveRightTrack.DeleteClip(clip);
+        }
+
+        foreach(TimelineClip clip in jumpTrack.GetClips())
+        {
+            jumpTrack.DeleteClip(clip);
+        }
+
+        foreach(TimelineClip clip in slideTrack.GetClips())
+        {
+            slideTrack.DeleteClip(clip);
+        }
     }
 }

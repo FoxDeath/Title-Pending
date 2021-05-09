@@ -64,7 +64,7 @@ public class PlayerInputs : MonoBehaviour
         {
             timer += Time.deltaTime;
 
-            timerText.text = timer.ToString();
+            timerText.text = (gameController.currentSequenceDuration - timer).ToString("#0.0");
 
             if(gameController.inInputPhase)
             {
