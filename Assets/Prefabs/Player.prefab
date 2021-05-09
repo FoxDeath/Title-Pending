@@ -204,7 +204,7 @@ MonoBehaviour:
   speed: 50
   jumpForce: 50
   jumpTime: 0.34
-  slideSpeed: 150
+  slideSpeed: 60
   slideTime: 0.3
   gravity: 50
 --- !u!114 &8810842579624239358
@@ -220,6 +220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 0
+  timerText: {fileID: 0}
 --- !u!114 &8810842579624239346
 MonoBehaviour:
   m_ObjectHideFlags: 0
