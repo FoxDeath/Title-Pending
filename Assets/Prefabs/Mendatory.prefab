@@ -781,6 +781,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inInputPhase: 1
+  inSegmentChange: 0
+  pressAnyKeyToContinue: 1
   currentSequenceDuration: 5
   camLerpDuration: 3
 --- !u!1 &6797644511927160923
@@ -965,6 +967,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4277780575845889340}
     m_Modifications:
+    - target: {fileID: 266514117, guid: c47396d365d4ffe45a4ba509e096da7a, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 266514117, guid: c47396d365d4ffe45a4ba509e096da7a, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 266514117, guid: c47396d365d4ffe45a4ba509e096da7a, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278255360
+      objectReference: {fileID: 0}
+    - target: {fileID: 266514119, guid: c47396d365d4ffe45a4ba509e096da7a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 400
+      objectReference: {fileID: 0}
     - target: {fileID: 1642636904682051238, guid: c47396d365d4ffe45a4ba509e096da7a, type: 3}
       propertyPath: gameEnd
       value: 

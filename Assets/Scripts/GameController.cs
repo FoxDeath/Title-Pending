@@ -6,9 +6,13 @@ using UnityEngine.Timeline;
 
 public class GameController : MonoBehaviour
 {
+    private Transform player;
+
     private List<Transform> CamPositions = new List<Transform>();
 
     private Transform cameraFollow;
+
+    private Vector2 currentSavedPos;
 
     private PlayableDirector director;
 
@@ -26,9 +30,11 @@ public class GameController : MonoBehaviour
 
     private Coroutine phaseSwitchCoroutine;
 
-    [HideInInspector] public bool inInputPhase = true;
+    [HideInInspector] public bool inInputPhase = false;
 
     [HideInInspector] public bool inSegmentChange = false;
+
+    [HideInInspector] public bool pressAnyKeyToContinue = true;
     
     public float currentSequenceDuration = 5f;
 
@@ -38,6 +44,8 @@ public class GameController : MonoBehaviour
 
     void Awake()
     {
+        player = GameObject.Find("Player").transform;
+
         Transform camPositions = GameObject.Find("CamPositions").transform;
 
         for(int i = 0; i < camPositions.childCount; i++)
@@ -47,12 +55,14 @@ public class GameController : MonoBehaviour
 
         cameraFollow = GameObject.Find("Mendatory").transform.Find("CameraFollow");
 
+        currentSavedPos = player.position;
+
         director = GameObject.Find("Player").GetComponent<PlayableDirector>();
 
         playerInputs = FindObjectOfType<PlayerInputs>();
 
         replay = (TimelineAsset)director.playableAsset;
-        
+
         moveLeftTrack = replay.GetOutputTrack(1);
 
         moveRightTrack = replay.GetOutputTrack(2);
@@ -65,8 +75,6 @@ public class GameController : MonoBehaviour
 
         director.Stop();
 
-        phaseSwitchCoroutine = StartCoroutine(PhaseSwitchBehaviour());
-            
         ResetTracks();
     }
 
@@ -74,13 +82,13 @@ public class GameController : MonoBehaviour
     {
         currentCamPosition++;
 
+        currentSavedPos = player.position;
+
         inSegmentChange = true;
 
         StopCoroutine(phaseSwitchCoroutine);
 
         director.Stop();
-
-        inInputPhase = true;
 
         ResetTracks();
 
@@ -108,11 +116,20 @@ public class GameController : MonoBehaviour
         
         inSegmentChange = false;
 
+        pressAnyKeyToContinue = true;
+    }
+
+    public void ContinueGame()
+    {
         phaseSwitchCoroutine = StartCoroutine(PhaseSwitchBehaviour());
+
+        inInputPhase = true;
     }
 
     private IEnumerator PhaseSwitchBehaviour()
     {
+        pressAnyKeyToContinue = false;
+
         playerInputs.timer = 0f;
 
         yield return new WaitForSeconds(currentSequenceDuration);
@@ -124,6 +141,8 @@ public class GameController : MonoBehaviour
             director.Play();
 
             playerInputs.FinaliseClips();
+
+            phaseSwitchCoroutine = StartCoroutine(PhaseSwitchBehaviour());
         }
         else
         {
@@ -132,9 +151,16 @@ public class GameController : MonoBehaviour
             inInputPhase = true;
             
             ResetTracks();
-        }
 
-        phaseSwitchCoroutine = StartCoroutine(PhaseSwitchBehaviour());
+            ResetSegment();
+        }
+    }
+
+    private void ResetSegment()
+    {
+        player.position = currentSavedPos;
+
+        pressAnyKeyToContinue = true;
     }
 
     private void ResetTracks()

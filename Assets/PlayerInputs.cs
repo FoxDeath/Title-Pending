@@ -60,7 +60,7 @@ public class PlayerInputs : MonoBehaviour
 
     private void Update()
     {
-        if(timer < gameController.currentSequenceDuration && !gameController.inSegmentChange)
+        if(timer < gameController.currentSequenceDuration && !gameController.inSegmentChange && !gameController.pressAnyKeyToContinue)
         {
             timer += Time.deltaTime;
 
@@ -79,6 +79,12 @@ public class PlayerInputs : MonoBehaviour
         {
             timerText.text = "Pending...";
         }
+        else if(gameController.pressAnyKeyToContinue)
+        {
+            timerText.color = Color.green;
+            
+            timerText.text = "Press Any Key";
+        }
     }
 
     public void FinaliseClips()
@@ -95,6 +101,14 @@ public class PlayerInputs : MonoBehaviour
             currentMoveRightClip.duration = gameController.currentSequenceDuration - ((gameController.currentSequenceDuration - (gameController.currentSequenceDuration - currentMoveRightClip.start)));
             
             currentMoveRightClip = null;
+        }
+    }
+
+    public void ContinueGamePerformed(InputAction.CallbackContext context)
+    {
+        if(gameController.pressAnyKeyToContinue)
+        {
+            gameController.ContinueGame();
         }
     }
 
