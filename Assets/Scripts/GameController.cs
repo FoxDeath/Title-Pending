@@ -194,12 +194,17 @@ public class GameController : MonoBehaviour
         }
         else
         {
-            director.Stop();
-            
-            ResetTracks();
-
-            ResetSegment();
+            ResetMenu();
         }
+    }
+
+    public void ResetMenu()
+    {
+        director.Stop();
+
+        ResetTracks();
+
+        ResetSegment();
     }
 
     private void ResetSegment()

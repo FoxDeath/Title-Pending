@@ -34,6 +34,8 @@ public class PlayerInputs : MonoBehaviour
 
     public float timer;
 
+    public bool isPaused;
+
     [SerializeField] TMPro.TMP_Text timerText;
 
     [SerializeField] GameObject pauseMenu;
@@ -64,10 +66,17 @@ public class PlayerInputs : MonoBehaviour
     private void Start()
     {
         controls.Enable();
+
+        isPaused = false;
     }
 
     private void Update()
-    {
+    {   
+        if(FindObjectOfType<PlayerInputs>().isPaused)
+        {
+            return;
+        }
+
         if(timer < gameController.currentSequenceDuration && !gameController.inSegmentChange && !gameController.pressAnyKeyToContinue)
         {
             timer += Time.deltaTime;
@@ -114,6 +123,11 @@ public class PlayerInputs : MonoBehaviour
 
     public void ContinueGamePerformed(InputAction.CallbackContext context)
     {
+        if(FindObjectOfType<PlayerInputs>().isPaused)
+        {
+            return;
+        }
+
         if(gameController.pressAnyKeyToContinue)
         {
             gameController.ContinueGame();
@@ -123,6 +137,12 @@ public class PlayerInputs : MonoBehaviour
     public void JumpPerformed(InputAction.CallbackContext context)
     {
         if(!gameController.inInputPhase)
+        {
+            return;
+        }
+
+        
+        if(FindObjectOfType<PlayerInputs>().isPaused)
         {
             return;
         }
@@ -146,6 +166,12 @@ public class PlayerInputs : MonoBehaviour
             return;
         }
 
+        
+        if(FindObjectOfType<PlayerInputs>().isPaused)
+        {
+            return;
+        }
+
         if(context.action.phase == InputActionPhase.Started)
         {
             TimelineClip clip = slideTrack.CreateDefaultClip();
@@ -161,6 +187,12 @@ public class PlayerInputs : MonoBehaviour
     public void LeftPerformed(InputAction.CallbackContext context)
     {
         if(!gameController.inInputPhase)
+        {
+            return;
+        }
+
+        
+        if(FindObjectOfType<PlayerInputs>().isPaused)
         {
             return;
         }
@@ -197,6 +229,12 @@ public class PlayerInputs : MonoBehaviour
             return;   
         }
 
+        
+        if(FindObjectOfType<PlayerInputs>().isPaused)
+        {
+            return;
+        }
+
         if(context.action.phase == InputActionPhase.Started)
         {
             currentMoveRightClip = moveRightTrack.CreateDefaultClip();
@@ -224,6 +262,7 @@ public class PlayerInputs : MonoBehaviour
 
     public void PausePerformed(InputAction.CallbackContext context)
     {
+        isPaused = true;
         pauseMenu.SetActive(true);
     }
 

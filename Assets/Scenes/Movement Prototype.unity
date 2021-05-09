@@ -763,6 +763,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad34d5c29e4ab4745a65bda0eed8b1d7, type: 3}
+--- !u!1 &761577598 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 818525888, guid: 79b99fc8ad4ba35458330ecd7531cfc2, type: 3}
+  m_PrefabInstance: {fileID: 4277780576254913233}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &810566606
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2343,6 +2348,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8810842579624239358, guid: 1f02eb8f1e5d3e24b96db70591413cf2, type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 761577598}
     - target: {fileID: 8810842579624239358, guid: 1f02eb8f1e5d3e24b96db70591413cf2, type: 3}
       propertyPath: timerText
       value: 
