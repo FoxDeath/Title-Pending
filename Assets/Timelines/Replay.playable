@@ -108,6 +108,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee1ca4bcafd2f0049bee2a71f7e7a6ff, type: 3}
   m_Name: MovementLeftControlClip
   m_EditorClassIdentifier: 
+--- !u!114 &-3733269074219284358
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69adb4d466679dd4085c44aeb7c6d661, type: 3}
+  m_Name: MovementRightControlClip
+  m_EditorClassIdentifier: 
 --- !u!114 &-3568097381266446232
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -145,6 +157,30 @@ MonoBehaviour:
   m_Name: JumpControlClip
   m_EditorClassIdentifier: 
 --- !u!114 &-2925309630370474949
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fef721e89ecfa574d9aeaa93f86ed158, type: 3}
+  m_Name: JumpControlClip
+  m_EditorClassIdentifier: 
+--- !u!114 &-2777028717523080388
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69adb4d466679dd4085c44aeb7c6d661, type: 3}
+  m_Name: MovementRightControlClip
+  m_EditorClassIdentifier: 
+--- !u!114 &-1893862073988476105
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -215,6 +251,18 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fef721e89ecfa574d9aeaa93f86ed158, type: 3}
   m_Name: JumpControlClip
+  m_EditorClassIdentifier: 
+--- !u!114 &-402059596157819075
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68e779635557d6248bb9ec9940686820, type: 3}
+  m_Name: SlideControlClip
   m_EditorClassIdentifier: 
 --- !u!114 &-355994066754023227
 MonoBehaviour:
@@ -322,6 +370,30 @@ MonoBehaviour:
   m_Clips: []
   m_Markers:
     m_Objects: []
+--- !u!114 &2117010879378217374
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee1ca4bcafd2f0049bee2a71f7e7a6ff, type: 3}
+  m_Name: MovementLeftControlClip
+  m_EditorClassIdentifier: 
+--- !u!114 &2446019707463957890
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fef721e89ecfa574d9aeaa93f86ed158, type: 3}
+  m_Name: JumpControlClip
+  m_EditorClassIdentifier: 
 --- !u!114 &2729882878355192853
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -381,6 +453,18 @@ MonoBehaviour:
   m_Markers:
     m_Objects: []
 --- !u!114 &3699645315141443805
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fef721e89ecfa574d9aeaa93f86ed158, type: 3}
+  m_Name: JumpControlClip
+  m_EditorClassIdentifier: 
+--- !u!114 &4178007353305407090
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}

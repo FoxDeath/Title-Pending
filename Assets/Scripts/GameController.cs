@@ -80,6 +80,8 @@ public class GameController : MonoBehaviour
 
     public void NextSection()
     {
+        PlayerMovement.StopMoving();
+
         currentCamPosition++;
 
         currentSavedPos = player.position;
@@ -121,6 +123,29 @@ public class GameController : MonoBehaviour
 
     public void ContinueGame()
     {
+        switch(currentCamPosition)
+        {
+            case 0:
+                currentSequenceDuration = 3f;
+            break;
+
+            case 1:
+                currentSequenceDuration = 5f;
+            break;
+
+            case 2:
+                currentSequenceDuration = 5f;
+            break;
+
+            case 3:
+                currentSequenceDuration = 5f;
+            break;
+
+            default:
+                currentSequenceDuration = 10f;
+            break;
+        }
+
         phaseSwitchCoroutine = StartCoroutine(PhaseSwitchBehaviour());
 
         inInputPhase = true;
@@ -147,8 +172,6 @@ public class GameController : MonoBehaviour
         else
         {
             director.Stop();
-
-            inInputPhase = true;
             
             ResetTracks();
 
