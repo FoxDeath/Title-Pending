@@ -22,6 +22,7 @@ public class PauseMenuController : MonoBehaviour
 
     public void Quit()
     {
+        FindObjectOfType<PlayerInputs>().blueScreen = true;
         FindObjectOfType<ControlsOverlay>().isFirstGo = false;
         FindObjectOfType<GameController>().ResetMenu();
     }

@@ -248,6 +248,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 0
+  isPaused: 0
+  blueScreen: 0
   timerText: {fileID: 0}
   pauseMenu: {fileID: 0}
 --- !u!114 &8810842579624239346

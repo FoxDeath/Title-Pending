@@ -3,6 +3,9 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Playables;
 using UnityEngine.Timeline;
+using UnityEngine.SceneManagement;
+
+
 
 public class PlayerInputs : MonoBehaviour
 {
@@ -36,6 +39,8 @@ public class PlayerInputs : MonoBehaviour
 
     public bool isPaused;
 
+    public bool blueScreen;
+
     [SerializeField] TMPro.TMP_Text timerText;
 
     [SerializeField] GameObject pauseMenu;
@@ -68,6 +73,8 @@ public class PlayerInputs : MonoBehaviour
         controls.Enable();
 
         isPaused = false;
+
+        blueScreen = false;
     }
 
     private void Update()
@@ -125,6 +132,12 @@ public class PlayerInputs : MonoBehaviour
     {
         if(FindObjectOfType<PlayerInputs>().isPaused)
         {
+            if(blueScreen)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
+
+
             return;
         }
 
@@ -262,6 +275,11 @@ public class PlayerInputs : MonoBehaviour
 
     public void PausePerformed(InputAction.CallbackContext context)
     {
+        if(FindObjectOfType<PlayerInputs>().isPaused)
+        {
+            return;
+        }
+
         isPaused = true;
         pauseMenu.SetActive(true);
     }

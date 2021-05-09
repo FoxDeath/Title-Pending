@@ -5,11 +5,6 @@ using UnityEditor;
 
 public class PlayerState : MonoBehaviour
 {
-    //to remove when building
-    private void OnDrawGizmos() 
-    {
-        Handles.Label(new Vector3(transform.position.x, transform.position.y + 5, transform.position.z), state.ToString());
-    }
 
     static private PlayerMovement playerMovement;
     static private PlayerInputs playerInputs;
