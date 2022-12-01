@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: f41562a35243b1a4dae74f52d13246d6
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - PixelartFont
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: ed46f6df52c691f4aaf01e0c67717f0e, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
