@@ -12,9 +12,11 @@ public class LoadingBar : MonoBehaviour
 
     public GameObject lastBitSpot;
 
-    private float Timer = 0.5f;
+    private float Timer = 0.075f;
 
     private ControlsOverlay controlsOverlay;
+
+    public bool loading;
 
     void Start()
     {
@@ -23,7 +25,7 @@ public class LoadingBar : MonoBehaviour
 
     void Update()
     {
-        if(controlsOverlay.GetIsLoading())
+        if(loading)
         {
              SpawnLoadBar();
         }
@@ -33,29 +35,34 @@ public class LoadingBar : MonoBehaviour
     {
         if(barBitClones.Count == 0)
         {
-        GameObject barBit = Instantiate(loadingBit,loadingStartSpot.transform.position,Quaternion.identity,transform);
+        GameObject barBit = Instantiate(loadingBit,loadingStartSpot.transform.localPosition,Quaternion.identity,transform);
+        
+        RectTransform barTransform = barBit.GetComponent<RectTransform>();
+        
+        barTransform.localPosition = loadingStartSpot.transform.localPosition;
+
+        
         barBitClones.Add(barBit);
         lastBitSpot = barBitClones.Last();
         }
         else
         {
         Timer -= Time.deltaTime;
-        if (Timer <= 0f)
+        if(Timer <= 0f)
         {
-        GameObject barBit = Instantiate(loadingBit,GetLastSpot(),Quaternion.identity,transform);
-         Timer = 0.5f;
+        GameObject barBit = Instantiate(loadingBit,Vector3.zero, Quaternion.identity, transform);
+        
+        RectTransform barTransform = barBit.GetComponent<RectTransform>();
+        
+        barTransform.position = controlsOverlay.position.position;
+        
          barBitClones.Add(barBit);
         }
         lastBitSpot = barBitClones.Last();
         }
     }
-
-    public Vector3 GetLastSpot()
-    {
-        return new Vector3(lastBitSpot.transform.position.x + 35f,lastBitSpot.transform.position.y,lastBitSpot.transform.position.z);
-    }
     public Vector3 GetLastSpotForLoad()
     {
-        return new Vector3(lastBitSpot.transform.position.x + 40f,lastBitSpot.transform.position.y,lastBitSpot.transform.position.z);
+        return new Vector3(lastBitSpot.transform.position.x + 5f,lastBitSpot.transform.position.y,lastBitSpot.transform.position.z);
     }
 }

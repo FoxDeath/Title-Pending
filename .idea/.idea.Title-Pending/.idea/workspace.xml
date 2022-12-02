@@ -2,25 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00af7daa-ec43-4df1-befa-ecc09a494b59" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Title-Pending/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Title-Pending/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/ControlsOverlay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ControlsOverlay.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Inputs/PlayerControls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Inputs/PlayerControls.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/LoadingBar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LoadingBar.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayerInputs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayerInputs.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/FMOD/FMODUnity.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/FMOD/FMODUnity.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/FMOD/addons/ResonanceAudio/Scripts/FMODUnityResonance.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/FMOD/addons/ResonanceAudio/Scripts/FMODUnityResonance.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/BarBit.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/BarBit.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/JumpImage.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/JumpImage.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/LoadBarLeft.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/LoadBarLeft.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/LoadBarRight.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/LoadBarRight.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/SlideImage.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/SlideImage.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Movement Prototype.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Movement Prototype.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Movement Prototype_Profiles/Main Camera Profile 1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Movement Prototype_Profiles/Main Camera Profile 1.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Movement Prototype_Profiles/Main Camera Profile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Movement Prototype_Profiles/Main Camera Profile.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Timelines/Replay.playable" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Timelines/Replay.playable" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fmod_editor.log" beforeDir="false" afterPath="$PROJECT_DIR$/fmod_editor.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.collab-proxy@1.3.9/Tests/Editor/Scenario/AsyncToCoroutine.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -36,6 +40,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "nodejs_package_manager_path": "npm",
     "rider.run.widget.enabled.cache": "false",
     "vue.rearranger.settings.migration": "true"
   }
@@ -78,7 +83,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1669896093860</updated>
-      <workItem from="1669896102256" duration="1594000" />
+      <workItem from="1669896102256" duration="8021000" />
     </task>
     <servers />
   </component>

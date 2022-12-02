@@ -7,6 +7,8 @@ using UnityEngine.Timeline;
 
 public class GameController : MonoBehaviour
 {
+    private ControlsOverlay controlsOverlay;
+    
     private GameObject tut1;
     
     private GameObject tut2;
@@ -37,11 +39,11 @@ public class GameController : MonoBehaviour
 
     private Coroutine phaseSwitchCoroutine;
 
-    [HideInInspector] public bool inInputPhase = false;
+    public bool inInputPhase = false;
 
-    [HideInInspector] public bool inSegmentChange = false;
+     public bool inSegmentChange = false;
 
-    [HideInInspector] public bool pressAnyKeyToContinue = true;
+    public bool pressAnyKeyToContinue = true;
 
     public bool inTutorial = false;
     
@@ -52,9 +54,11 @@ public class GameController : MonoBehaviour
     private int currentCamPosition = 0;
 
     private bool started = false;
+    public float timeLeft;
 
     void Awake()
     {
+        controlsOverlay = FindObjectOfType<ControlsOverlay>();
         tut1 = GameObject.Find("Mendatory").transform.Find("LoadingBarCanvas 1").Find("Tutorial1").gameObject;
 
         tut1.SetActive(false);
@@ -152,6 +156,8 @@ public class GameController : MonoBehaviour
     public void NextSection()
     {
         PlayerMovement.StopMoving();
+        
+        controlsOverlay.position.localPosition = new Vector3(-600, -275, 0);
 
         currentCamPosition++;
 
@@ -253,6 +259,8 @@ public class GameController : MonoBehaviour
     private void ResetSegment()
     {
         player.position = currentSavedPos;
+        
+        controlsOverlay.position.localPosition = new Vector3(-600, -275, 0);
 
         pressAnyKeyToContinue = true;
     }

@@ -6,6 +6,8 @@ using System.Linq;
 public class ControlsOverlay : MonoBehaviour
 {
 #region Attributes
+
+private GameController gameController;
 private Transform loadingStartSpot;
 private Transform loadingNextSpot;
 [SerializeField] GameObject loadBarRight;
@@ -19,35 +21,48 @@ List<GameObject> barSkillClones = new List<GameObject>();
 [SerializeField] GameObject lastWalkBar;
 private GameObject lastSkillBar;
 
-private bool isLoading = false;
-
 private LoadingBar loadingBar;
+
+[SerializeField] public RectTransform position;
 
 #endregion
 
-void Start()
+private void Awake()
 {
-    loadingBar = FindObjectOfType<LoadingBar>();
+    gameController = FindObjectOfType<GameController>();
 }
 
-private void FixedUpdate() {
-    SetFaceBar();
-}
+    private void FixedUpdate()
+    {
+        if(!gameController.inInputPhase)
+        {
+            if(loadingBar && loadingBar.loading)
+            {
+                loadingBar.loading = false;
+            }
+            
+            return;
+        }
+
+        position.localPosition = Vector3.MoveTowards(position.localPosition, new Vector3(600, -275, 0), 1200f / (50f * gameController.currentSequenceDuration));
+
+        SetFaceBar();
+    }
 
     public void SetFaceBar()
     {
-        if(PlayerInputs.GetMovePressed() > 0f)
+        if(PlayerInputs.GetMovePressed() < 0f)
         {
             ActionRight();
         }
-        else if(PlayerInputs.GetMovePressed() < 0f)
+        else if(PlayerInputs.GetMovePressed() > 0f)
         {
             ActionLeft();
         }
 
-        if(PlayerInputs.GetMovePressed() == 0f)
+        if(PlayerInputs.GetMovePressed() == 0f && loadingBar)
         {
-            isLoading = false;
+            loadingBar.loading = false;
         }
     }
     
@@ -56,26 +71,28 @@ private void FixedUpdate() {
        if(barWalkClones.Count == 0)
         {
         GameObject bar = Instantiate(loadBarRight, new Vector3(60, 120, 0), Quaternion.identity, transform);
+        
+        RectTransform barTransform = bar.GetComponent<RectTransform>();
+
+        barTransform.anchoredPosition = position.anchoredPosition;
+        
         barWalkClones.Add(bar);
         lastWalkBar = barWalkClones.Last();
-        isLoading = true;
-
-            if(loadingBar == null)
-            {
-                loadingBar = FindObjectOfType<LoadingBar>();
-            }
+        loadingBar = bar.GetComponent<LoadingBar>();
+        loadingBar.loading = true;
         }
-        else if (barWalkClones.Count != 0 && !GetIsLoading())
+        else if (barWalkClones.Count != 0 && !loadingBar.loading)
         {
         GameObject bar = Instantiate(loadBarRight, loadingBar.GetLastSpotForLoad(), Quaternion.identity, transform);
+        
+        RectTransform barTransform = bar.GetComponent<RectTransform>();
+
+        barTransform.anchoredPosition = position.anchoredPosition;
+        
         barWalkClones.Add(bar);
         lastWalkBar = barWalkClones.Last();
-        isLoading = true;
-
-            if(loadingBar == null)
-            {
-                loadingBar = FindObjectOfType<LoadingBar>();
-            }
+        loadingBar = bar.GetComponent<LoadingBar>();
+        loadingBar.loading = true;
         }
     }
 
@@ -83,28 +100,30 @@ private void FixedUpdate() {
     {
        if(barWalkClones.Count == 0)
         {
-        GameObject bar = Instantiate(loadBarLeft, new Vector3(60, 120, 0), Quaternion.identity, transform);
+        GameObject bar = Instantiate(loadBarLeft, new Vector3(-600, -275, 0), Quaternion.identity, transform);
+
+        RectTransform barTransform = bar.GetComponent<RectTransform>();
+
+        barTransform.localPosition = position.transform.localPosition;
+        
         barWalkClones.Add(bar);
         lastWalkBar = barWalkClones.Last();
-        isLoading = true;
-
-            if(loadingBar == null)
-            {
-                loadingBar = FindObjectOfType<LoadingBar>();
-            }
+        loadingBar = bar.GetComponent<LoadingBar>();
+        loadingBar.loading = true;
         }
 
-        else if (barWalkClones.Count != 0 && !GetIsLoading())
+        else if (barWalkClones.Count != 0 && !loadingBar.loading)
         {
         GameObject bar = Instantiate(loadBarLeft,loadingBar.GetLastSpotForLoad(), Quaternion.identity, transform);
+        
+        RectTransform barTransform = bar.GetComponent<RectTransform>();
+
+        barTransform.localPosition = position.transform.localPosition;
+        
         barWalkClones.Add(bar);
         lastWalkBar = barWalkClones.Last();
-        isLoading = true;
-
-            if(loadingBar == null)
-            {
-                loadingBar = FindObjectOfType<LoadingBar>();
-            }
+        loadingBar = bar.GetComponent<LoadingBar>();
+        loadingBar.loading = true;
         }
     }
     
@@ -112,13 +131,23 @@ private void FixedUpdate() {
     {
         if(barSkillClones.Count == 0)
         {
-        GameObject bar = Instantiate(slideImage, new Vector3(60, 60, 0), Quaternion.identity, transform);
+        GameObject bar = Instantiate(slideImage, new Vector3(-600, -275, 0), Quaternion.identity, transform);
+        
+        RectTransform barTransform = bar.GetComponent<RectTransform>();
+
+        barTransform.localPosition = position.transform.localPosition + new Vector3(0, -27.5f, 0);
+        
         barSkillClones.Add(bar);
         lastSkillBar = barSkillClones.Last();
         }
         else
         {
         GameObject bar = Instantiate(slideImage, new Vector3(lastSkillBar.transform.position.x +100,60, 0), Quaternion.identity, transform);
+        
+        RectTransform barTransform = bar.GetComponent<RectTransform>();
+
+        barTransform.localPosition = position.transform.localPosition + new Vector3(0, -27.5f, 0);
+        
         barSkillClones.Add(bar);
         lastSkillBar = barSkillClones.Last();
         }
@@ -128,21 +157,31 @@ private void FixedUpdate() {
     {
         if(barSkillClones.Count == 0)
         {
-        GameObject bar = Instantiate(jumpImage, new Vector3(60, 60, 0), Quaternion.identity, transform);
+        GameObject bar = Instantiate(jumpImage, new Vector3(-600, -275, 0), Quaternion.identity, transform);
+        
+        RectTransform barTransform = bar.GetComponent<RectTransform>();
+
+        barTransform.localPosition = position.transform.localPosition + new Vector3(0, -27.5f, 0);
+        
         barSkillClones.Add(bar);
         lastSkillBar = barSkillClones.Last();
         }
         else
         {
         GameObject bar = Instantiate(jumpImage, new Vector3(lastSkillBar.transform.position.x +100,60, 0), Quaternion.identity, transform);
+        
+        RectTransform barTransform = bar.GetComponent<RectTransform>();
+
+        barTransform.localPosition = position.transform.localPosition + new Vector3(0, -27.5f, 0);
+        
         barSkillClones.Add(bar);
         lastSkillBar = barSkillClones.Last();
         }
     }
 
-    public bool GetIsLoading()
+    public void Reset()
     {
-        return isLoading;
+        
     }
 }
 
