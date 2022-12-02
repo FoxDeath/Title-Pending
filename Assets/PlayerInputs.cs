@@ -185,7 +185,7 @@ public class PlayerInputs : MonoBehaviour
 
             movePressed = 1f;
         }
-        else if(context.action.phase == InputActionPhase.Canceled)
+        else if(context.action.phase == InputActionPhase.Canceled && movePressed == 1f)
         {
             if(currentMoveLeftClip == null && gameController.inInputPhase)
             {
@@ -217,7 +217,7 @@ public class PlayerInputs : MonoBehaviour
 
             movePressed = -1f;
         }
-        else if(context.action.phase == InputActionPhase.Canceled)
+        else if(context.action.phase == InputActionPhase.Canceled && movePressed == -1f)
         {
             if(currentMoveRightClip == null && gameController.inInputPhase)
             {

@@ -6,13 +6,10 @@ using System.Linq;
 public class LoadingBar : MonoBehaviour
 {
     [SerializeField] GameObject loadingBit;
-    [SerializeField] GameObject loadingStartSpot;
 
-    List<GameObject> barBitClones = new List<GameObject>();
-
-    public GameObject lastBitSpot;
-
-    private float Timer = 0.075f;
+    private List<GameObject> barBitClones = new();
+    
+    private float Timer = 0.0345f;
 
     private ControlsOverlay controlsOverlay;
 
@@ -21,10 +18,17 @@ public class LoadingBar : MonoBehaviour
     void Start()
     {
         controlsOverlay = FindObjectOfType<ControlsOverlay>();
+        
+        Timer = 0.0115f * (controlsOverlay.gameController.currentSequenceDuration * 1.25f);
     }
 
-    void Update()
+    void FixedUpdate()
     {
+        if(controlsOverlay.gameController.inSegmentChange)
+        {
+            Timer = 0.0115f * (controlsOverlay.gameController.currentSequenceDuration * 1.25f);
+        }
+        
         if(loading)
         {
              SpawnLoadBar();
@@ -33,36 +37,19 @@ public class LoadingBar : MonoBehaviour
 
     public void SpawnLoadBar()
     {
-        if(barBitClones.Count == 0)
-        {
-        GameObject barBit = Instantiate(loadingBit,loadingStartSpot.transform.localPosition,Quaternion.identity,transform);
+        Timer -= Time.fixedDeltaTime;
         
-        RectTransform barTransform = barBit.GetComponent<RectTransform>();
-        
-        barTransform.localPosition = loadingStartSpot.transform.localPosition;
-
-        
-        barBitClones.Add(barBit);
-        lastBitSpot = barBitClones.Last();
-        }
-        else
-        {
-        Timer -= Time.deltaTime;
         if(Timer <= 0f)
         {
-        GameObject barBit = Instantiate(loadingBit,Vector3.zero, Quaternion.identity, transform);
-        
-        RectTransform barTransform = barBit.GetComponent<RectTransform>();
-        
-        barTransform.position = controlsOverlay.position.position;
-        
-         barBitClones.Add(barBit);
+            Timer = 0.0115f * (controlsOverlay.gameController.currentSequenceDuration * 1.25f);
+            
+            GameObject barBit = Instantiate(loadingBit, transform);
+            
+            RectTransform barTransform = barBit.GetComponent<RectTransform>();
+            
+            barTransform.position = controlsOverlay.position.position;
+            
+             barBitClones.Add(barBit);
         }
-        lastBitSpot = barBitClones.Last();
-        }
-    }
-    public Vector3 GetLastSpotForLoad()
-    {
-        return new Vector3(lastBitSpot.transform.position.x + 5f,lastBitSpot.transform.position.y,lastBitSpot.transform.position.z);
     }
 }

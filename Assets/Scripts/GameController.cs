@@ -157,8 +157,8 @@ public class GameController : MonoBehaviour
     {
         PlayerMovement.StopMoving();
         
-        controlsOverlay.position.localPosition = new Vector3(-600, -275, 0);
-
+        controlsOverlay.Continue();
+        
         currentCamPosition++;
 
         currentSavedPos = player.position;
@@ -260,8 +260,8 @@ public class GameController : MonoBehaviour
     {
         player.position = currentSavedPos;
         
-        controlsOverlay.position.localPosition = new Vector3(-600, -275, 0);
-
+        controlsOverlay.Reset();
+        
         pressAnyKeyToContinue = true;
     }
 

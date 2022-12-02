@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.UI;
 
 public class ControlsOverlay : MonoBehaviour
 {
 #region Attributes
 
-private GameController gameController;
+public GameController gameController;
 private Transform loadingStartSpot;
 private Transform loadingNextSpot;
 [SerializeField] GameObject loadBarRight;
@@ -83,7 +84,7 @@ private void Awake()
         }
         else if (barWalkClones.Count != 0 && !loadingBar.loading)
         {
-        GameObject bar = Instantiate(loadBarRight, loadingBar.GetLastSpotForLoad(), Quaternion.identity, transform);
+        GameObject bar = Instantiate(loadBarRight, Vector3.zero, Quaternion.identity, transform);
         
         RectTransform barTransform = bar.GetComponent<RectTransform>();
 
@@ -100,7 +101,7 @@ private void Awake()
     {
        if(barWalkClones.Count == 0)
         {
-        GameObject bar = Instantiate(loadBarLeft, new Vector3(-600, -275, 0), Quaternion.identity, transform);
+        GameObject bar = Instantiate(loadBarLeft, transform);
 
         RectTransform barTransform = bar.GetComponent<RectTransform>();
 
@@ -114,7 +115,7 @@ private void Awake()
 
         else if (barWalkClones.Count != 0 && !loadingBar.loading)
         {
-        GameObject bar = Instantiate(loadBarLeft,loadingBar.GetLastSpotForLoad(), Quaternion.identity, transform);
+        GameObject bar = Instantiate(loadBarLeft, transform);
         
         RectTransform barTransform = bar.GetComponent<RectTransform>();
 
@@ -131,7 +132,7 @@ private void Awake()
     {
         if(barSkillClones.Count == 0)
         {
-        GameObject bar = Instantiate(slideImage, new Vector3(-600, -275, 0), Quaternion.identity, transform);
+        GameObject bar = Instantiate(slideImage, transform);
         
         RectTransform barTransform = bar.GetComponent<RectTransform>();
 
@@ -142,7 +143,7 @@ private void Awake()
         }
         else
         {
-        GameObject bar = Instantiate(slideImage, new Vector3(lastSkillBar.transform.position.x +100,60, 0), Quaternion.identity, transform);
+        GameObject bar = Instantiate(slideImage, transform);
         
         RectTransform barTransform = bar.GetComponent<RectTransform>();
 
@@ -157,7 +158,7 @@ private void Awake()
     {
         if(barSkillClones.Count == 0)
         {
-        GameObject bar = Instantiate(jumpImage, new Vector3(-600, -275, 0), Quaternion.identity, transform);
+        GameObject bar = Instantiate(jumpImage, transform);
         
         RectTransform barTransform = bar.GetComponent<RectTransform>();
 
@@ -181,7 +182,85 @@ private void Awake()
 
     public void Reset()
     {
+        position.localPosition = new Vector3(-600, -275, 0);
+
+        foreach(var clone in barWalkClones)
+        {
+            if(!clone)
+            {
+                continue;
+            }
+            
+            foreach(Transform child in clone.transform)
+            {
+                Image component = child.GetComponent<Image>();
+
+                if(component)
+                {
+                    if(component.color != new Color(1f, 1f, 1f, 0.5f))
+                    {
+                        component.color = new Color(1f, 1f, 1f, 0.5f);
+                    }
+                    else
+                    {
+                        Destroy(clone);
+
+                        break;
+                    }
+                }
+            }
+        }
+
+        foreach(var clone in barSkillClones)
+        {
+            if(!clone)
+            {
+                continue;
+            }
+            
+            Image component = clone.GetComponent<Image>();
+
+            if(component)
+            {
+                if(component.color != new Color(1f, 1f, 1f, 0.5f))
+                {
+                    component.color = new Color(1f, 1f, 1f, 0.5f);
+                }
+                else
+                {
+                    Destroy(clone);
+                }
+            }
+        }
+    }
+
+    public void Continue()
+    {
+        position.localPosition = new Vector3(-600, -275, 0);
+
+        foreach(var clone in barWalkClones)
+        {
+            if(!clone)
+            {
+                continue;
+            }
+            
+            Destroy(clone);
+        }
+
+        foreach(var clone in barSkillClones)
+        {
+            if(!clone)
+            {
+                continue;
+            }
+            
+            Destroy(clone);
+        }
+
+        barSkillClones.Clear();
         
+        barWalkClones.Clear();
     }
 }
 
