@@ -2316,19 +2316,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 473877299, guid: 79b99fc8ad4ba35458330ecd7531cfc2, type: 3}
       propertyPath: m_LocalScale.x
-      value: 15
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 473877299, guid: 79b99fc8ad4ba35458330ecd7531cfc2, type: 3}
       propertyPath: m_LocalScale.y
-      value: 15
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 473877299, guid: 79b99fc8ad4ba35458330ecd7531cfc2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1420807964, guid: 79b99fc8ad4ba35458330ecd7531cfc2, type: 3}
       propertyPath: m_LocalScale.x
-      value: 15
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1420807964, guid: 79b99fc8ad4ba35458330ecd7531cfc2, type: 3}
       propertyPath: m_LocalScale.y
-      value: 15
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1420807964, guid: 79b99fc8ad4ba35458330ecd7531cfc2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1533314499, guid: 79b99fc8ad4ba35458330ecd7531cfc2, type: 3}
       propertyPath: m_IsActive
@@ -2380,11 +2388,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1978339283, guid: 79b99fc8ad4ba35458330ecd7531cfc2, type: 3}
       propertyPath: m_LocalScale.x
-      value: 15
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1978339283, guid: 79b99fc8ad4ba35458330ecd7531cfc2, type: 3}
       propertyPath: m_LocalScale.y
-      value: 15
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1978339283, guid: 79b99fc8ad4ba35458330ecd7531cfc2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100299401809492929, guid: 79b99fc8ad4ba35458330ecd7531cfc2, type: 3}
       propertyPath: m_SizeDelta.x
@@ -3392,7 +3404,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5545830198495406059, guid: 79b99fc8ad4ba35458330ecd7531cfc2, type: 3}
       propertyPath: inTutorial
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5545830198495406059, guid: 79b99fc8ad4ba35458330ecd7531cfc2, type: 3}
       propertyPath: inInputPhase
