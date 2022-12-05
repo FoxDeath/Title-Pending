@@ -8,8 +8,6 @@ public class GoalController : MonoBehaviour
 
     private GameController gameController;
 
-    private AudioSource audioSource;
-
     private bool fired = false;
 
     private void Awake()
@@ -17,8 +15,6 @@ public class GoalController : MonoBehaviour
         myColldier = GetComponent<Collider2D>();
 
         gameController = FindObjectOfType<GameController>();
-
-        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -29,16 +25,7 @@ public class GoalController : MonoBehaviour
             
             myColldier.enabled = false;
 
-            audioSource.Play();
-
-            StartCoroutine(Timer());
+            gameController.Win();
         }
-    }
-
-    private IEnumerator Timer()
-    {
-        yield return new WaitForSeconds(1f);
-
-        gameController.Win();
     }
 }

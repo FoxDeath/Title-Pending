@@ -129,6 +129,10 @@ public class PlayerInputs : MonoBehaviour
             {
                 gameController.ContinueGame();
             }
+            else if(gameController.gameEnded)
+            {
+                gameController.RestartGame();
+            }
         }
     }
 

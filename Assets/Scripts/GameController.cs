@@ -56,6 +56,10 @@ public class GameController : MonoBehaviour
     private bool started = false;
     public float timeLeft;
 
+    public bool gameEnded;
+
+    public GameObject blueDeath;
+
     void Awake()
     {
         controlsOverlay = FindObjectOfType<ControlsOverlay>();
@@ -150,6 +154,13 @@ public class GameController : MonoBehaviour
 
         ResetTracks();
 
+        gameEnded = true;
+
+        blueDeath.SetActive(true);
+    }
+
+    public void RestartGame()
+    {
         SceneManager.LoadScene(0);
     }
 

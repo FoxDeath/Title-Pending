@@ -379,7 +379,7 @@ MonoBehaviour:
   StopEvent: 2
   AllowFadeout: 1
   TriggerOnce: 0
-  Preload: 0
+  Preload: 1
   Params:
   - Name: Movement
     Value: 0
@@ -1072,8 +1072,8 @@ Transform:
   - {fileID: 4277780574440741594}
   - {fileID: 1034452400}
   - {fileID: 5545830198495406058}
-  - {fileID: 5173319155822745689}
   - {fileID: 1533314500}
+  - {fileID: 5173319155822745689}
   - {fileID: 185288216}
   - {fileID: 2028108485086438422}
   - {fileID: 1551155303}
@@ -1189,6 +1189,8 @@ MonoBehaviour:
   currentSequenceDuration: 5
   camLerpDuration: 3
   timeLeft: 0
+  gameEnded: 0
+  blueDeath: {fileID: 1533314499}
 --- !u!1 &6797644511927160923
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,5 +1,126 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8156930747434396234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Nordic Game Jam Project/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638058549684404363
+  FileSizes:
+  - Name: Custom
+    Value: 1054
+  - Name: Desktop
+    Value: 1054
+  Exists: 1
+--- !u!114 &-7606387149158970883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MainSoundtrack/Slide
+  m_EditorClassIdentifier: 
+  Name: Slide
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2540356960
+    data2: 506212975
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-6801798420258247683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/TestEvent
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/TestEvent
+  Guid:
+    Data1: -2068616826
+    Data2: 1238490849
+    Data3: -267832131
+    Data4: -695203237
+  Banks:
+  - {fileID: -4823193223799916713}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &-6412646198748913586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MainSoundtrack/Movement
+  m_EditorClassIdentifier: 
+  Name: Movement
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2990392183
+    data2: 1864826768
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-5975508649337013077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/MainSoundtrack/Jump
+  m_EditorClassIdentifier: 
+  Name: Jump
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1735007842
+    data2: 4015725760
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-5017826334356566834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24,6 +145,85 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-4827599109661879873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Win_sound_5
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Win_sound_5
+  Guid:
+    Data1: -195162001
+    Data2: 1079790823
+    Data3: -741497684
+    Data4: 1482587114
+  Banks:
+  - {fileID: -4823193223799916713}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1979
+--- !u!114 &-4823193223799916713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Nordic Game Jam Project/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638058549684384300
+  FileSizes:
+  - Name: Custom
+    Value: 1339328
+  - Name: Desktop
+    Value: 1339328
+  Exists: 1
+--- !u!114 &-3382242756441132280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/MainSoundtrack
+  m_EditorClassIdentifier: 
+  Path: event:/Music/MainSoundtrack
+  Guid:
+    Data1: -694394364
+    Data2: 1114763682
+    Data3: -1684870768
+    Data4: 1147273543
+  Banks:
+  - {fileID: -4823193223799916713}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -6412646198748913586}
+  - {fileID: -5975508649337013077}
+  - {fileID: -7606387149158970883}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 25600
 --- !u!114 &-1347167197098746411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39,10 +239,10 @@ MonoBehaviour:
   Path: Nordic Game Jam Project/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638058504965070184
+  lastModified: 638058537981532710
   FileSizes:
   - Name: Desktop
-    Value: 1312576
+    Value: 1339328
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -57,20 +257,21 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 6623595678942658834}
-  - {fileID: -1347167197098746411}
+  - {fileID: -8156930747434396234}
+  - {fileID: -4823193223799916713}
   EditorEvents:
-  - {fileID: 8010199447883016796}
-  - {fileID: 8932356784420280315}
-  - {fileID: 971669755236537715}
+  - {fileID: -3382242756441132280}
+  - {fileID: -4827599109661879873}
+  - {fileID: -6801798420258247683}
+  - {fileID: 5148730886376269263}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -1347167197098746411}
+  - {fileID: -4823193223799916713}
   StringsBanks:
-  - {fileID: 6623595678942658834}
-  cacheTime: 638058504965085247
+  - {fileID: -8156930747434396234}
+  cacheTime: 638058549684404363
   cacheVersion: 131593
---- !u!114 &971669755236537715
+--- !u!114 &85391662413592809
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -80,9 +281,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Win
+  m_Name: event:/SFX/Win
   m_EditorClassIdentifier: 
-  Path: event:/Win
+  Path: event:/SFX/Win
   Guid:
     Data1: 1966734989
     Data2: 1295006132
@@ -96,7 +297,61 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 1979
+--- !u!114 &3709704832586000630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Win_sound_5
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Win_sound_5
+  Guid:
+    Data1: -195162001
+    Data2: 1079790823
+    Data3: -741497684
+    Data4: 1482587114
+  Banks:
+  - {fileID: -1347167197098746411}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1979
+--- !u!114 &5148730886376269263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Win
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Win
+  Guid:
+    Data1: 1966734989
+    Data2: 1295006132
+    Data3: 1788982938
+    Data4: -1246736378
+  Banks:
+  - {fileID: -4823193223799916713}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1979
 --- !u!114 &6489072036279824848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,10 +391,10 @@ MonoBehaviour:
   Path: Nordic Game Jam Project/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638058504965085247
+  lastModified: 638058537981557850
   FileSizes:
   - Name: Desktop
-    Value: 992
+    Value: 1054
   Exists: 1
 --- !u!114 &7928404943611755801
 MonoBehaviour:

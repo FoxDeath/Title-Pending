@@ -3,13 +3,113 @@
   <component name="ChangeListManager">
     <list default="true" id="00af7daa-ec43-4df1-befa-ecc09a494b59" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Title-Pending/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Title-Pending/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ControlsOverlay.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/ControlsOverlay.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/LoadingBar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/LoadingBar.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/Checkpoint/checkpoint1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/Checkpoint/checkpoint1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/Checkpoint/checkpoint2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/Checkpoint/checkpoint2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/Checkpoint/checkpoint3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/Checkpoint/checkpoint3.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/Checkpoint/checkpoint4.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/Checkpoint/checkpoint4.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/Checkpoint/checkpoint5.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/Checkpoint/checkpoint5.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/Checkpoint/checkpoint6.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/Checkpoint/checkpoint6.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/Checkpoint/checkpoint7.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/Checkpoint/checkpoint7.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/Checkpoint/checkpoint8.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/Checkpoint/checkpoint8.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/Checkpoint/static_checkpoint.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/Checkpoint/static_checkpoint.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/Documents.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/Documents.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/Folders/fam.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/Folders/fam.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/Folders/home.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/Folders/home.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/Folders/lodas.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/Folders/lodas.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/Folders/pirate.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/Folders/pirate.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/Stabby.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/Stabby.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/downloading.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/downloading.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/explorer.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/explorer.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/file_explorer.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/file_explorer.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/final_checkpoint/final_checkpoint1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/final_checkpoint/final_checkpoint1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/final_checkpoint/final_checkpoint2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/final_checkpoint/final_checkpoint2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/final_checkpoint/final_checkpoint3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/final_checkpoint/final_checkpoint3.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/final_checkpoint/final_checkpoint4.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/final_checkpoint/final_checkpoint4.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/final_checkpoint/final_checkpoint5.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/final_checkpoint/final_checkpoint5.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/final_checkpoint/final_checkpoint6.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/final_checkpoint/final_checkpoint6.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/final_checkpoint/final_checkpoint7.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/final_checkpoint/final_checkpoint7.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/final_checkpoint/final_checkpoint8.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/final_checkpoint/final_checkpoint8.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/final_checkpoint/static_final_checkpoint.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/final_checkpoint/static_final_checkpoint.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/ground.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/ground.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/my computer.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/my computer.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/nanohive.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/nanohive.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/ok.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/ok.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/quit/quit1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/quit/quit1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/quit/quit2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/quit/quit2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/quit/quit3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/quit/quit3.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/quit/quit4.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/quit/quit4.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/quit/quit5.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/quit/quit5.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/quit/quit6.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/quit/quit6.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/quit/quit7.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/quit/quit7.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/quit/quit8.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/quit/quit8.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/start.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/start.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/titlescreen.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/titlescreen.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/tower.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/tower.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/trash.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/Assets_for_Zip/trash.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/input_actions/input_jump.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/input_actions/input_jump.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/input_actions/input_run.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/input_actions/input_run.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/input_actions/input_slide.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/input_actions/input_slide.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/loading_bar.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/loading_bar.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/loading_bar_brick.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/loading_bar_brick.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/player_fall/test_fall1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/player_fall/test_fall1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/player_fall/test_fall2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/player_fall/test_fall2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/player_fall/test_fall3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/player_fall/test_fall3.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/player_fall/test_fall4.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/player_fall/test_fall4.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/player_idle/test_idle1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/player_idle/test_idle1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/player_idle/test_idle2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/player_idle/test_idle2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/player_idle/test_idle3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/player_idle/test_idle3.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/player_jump/test_jump1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/player_jump/test_jump1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/player_jump/test_jump2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/player_jump/test_jump2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/player_jump/test_jump3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/player_jump/test_jump3.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/player_jump/test_jump4.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/player_jump/test_jump4.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/player_jump/test_jump5.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/player_jump/test_jump5.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/player_jump/test_jump6.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/player_jump/test_jump6.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/player_jump/test_jump7.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/player_jump/test_jump7.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/player_jump/test_jump8.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/player_jump/test_jump8.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/player_jump/test_jump9.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/player_jump/test_jump9.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/player_run/test_run1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/player_run/test_run1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/player_run/test_run2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/player_run/test_run2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/player_run/test_run3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/player_run/test_run3.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/player_slide/test_slide1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/player_slide/test_slide1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/player_slide/test_slide2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/player_slide/test_slide2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/player_slide/test_slide3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/player_slide/test_slide3.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/player_slide/test_slide4.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/player_slide/test_slide4.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/player_slide/test_slide5.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/player_slide/test_slide5.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/tutorial/tut_1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/tutorial/tut_1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/tutorial/tut_2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/tutorial/tut_2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Art/tutorial/tut_3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Art/tutorial/tut_3.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/PlayerInputs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayerInputs.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PlayerState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PlayerState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/FMOD/Resources/FMODStudioSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/FMOD/Resources/FMODStudioSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/FMOD/platform_ios.mm.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/FMOD/platform_ios.mm.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/FMOD/platforms/html5/lib/2.0.19/libfmodstudio.a.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/FMOD/platforms/html5/lib/2.0.19/libfmodstudio.a.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/FMOD/platforms/html5/lib/libfmodstudiounityplugin.bc.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/FMOD/platforms/html5/lib/libfmodstudiounityplugin.bc.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/FMOD/platforms/html5/lib/libfmodstudiounitypluginL.bc.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/FMOD/platforms/html5/lib/libfmodstudiounitypluginL.bc.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Goal.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Goal.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Mendatory.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Mendatory.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Movement Prototype.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Movement Prototype.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Movement Prototype_Profiles/Main Camera Profile 1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Movement Prototype_Profiles/Main Camera Profile 1.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ReplayTest.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/ReplayTest.unity.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GoalController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GoalController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Timelines/Replay.playable" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Timelines/Replay.playable" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nordic Game Jam Project/.cache/{4faeb854-c07d-4ba5-ba21-3d4f9e93cebc}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/Nordic Game Jam Project/.cache/{4faeb854-c07d-4ba5-ba21-3d4f9e93cebc}.pdc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nordic Game Jam Project/.cache/{d7042023-c9db-45db-8ae4-bc60810d5e30}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/Nordic Game Jam Project/.cache/{d7042023-c9db-45db-8ae4-bc60810d5e30}.pdc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nordic Game Jam Project/.cache/{e2331b83-1ec9-49c9-89c2-9b17fece2a50}.pdc" beforeDir="false" afterPath="$PROJECT_DIR$/Nordic Game Jam Project/.cache/{e2331b83-1ec9-49c9-89c2-9b17fece2a50}.pdc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nordic Game Jam Project/Build/Desktop/Master.bank" beforeDir="false" afterPath="$PROJECT_DIR$/Nordic Game Jam Project/Build/Desktop/Master.bank" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nordic Game Jam Project/Build/Desktop/Master.strings.bank" beforeDir="false" afterPath="$PROJECT_DIR$/Nordic Game Jam Project/Build/Desktop/Master.strings.bank" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nordic Game Jam Project/Metadata/AudioFile/{8999d97d-a996-442f-99fb-85cfd92e1117}.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nordic Game Jam Project/Metadata/AudioFile/{c030546f-fc2b-46f8-84d7-0d40946c8284}.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nordic Game Jam Project/Metadata/Event/{7539fe8d-39b4-4d30-9ab6-a16a0650b0b5}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Nordic Game Jam Project/Metadata/Event/{7539fe8d-39b4-4d30-9ab6-a16a0650b0b5}.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nordic Game Jam Project/Metadata/Event/{d69c6204-f1a2-4271-90e9-929b47016244}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Nordic Game Jam Project/Metadata/Event/{d69c6204-f1a2-4271-90e9-929b47016244}.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nordic Game Jam Project/Metadata/Event/{f45e106f-4ce7-405c-aca4-cdd3ea7b5e58}.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Nordic Game Jam Project/Metadata/Event/{f45e106f-4ce7-405c-aca4-cdd3ea7b5e58}.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nordic Game Jam Project/Metadata/Workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Nordic Game Jam Project/Metadata/Workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fmod_editor.log" beforeDir="false" afterPath="$PROJECT_DIR$/fmod_editor.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,7 +117,8 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.collab-proxy@1.3.9/Tests/Editor/Scenario/AsyncToCoroutine.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/CRT.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.8.9/Runtime/Behaviours/CinemachineBrain.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -27,17 +128,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Discover.Launch.Via.Unity": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "nodejs_package_manager_path": "npm",
-    "rider.run.widget.enabled.cache": "false",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;rider.run.widget.enabled.cache&quot;: &quot;false&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.1.23f1\Editor\Unity.exe" />
@@ -86,6 +187,17 @@
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
