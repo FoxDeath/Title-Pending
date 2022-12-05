@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{c3ad6671-0032-4956-94f1-8d04b762eb37}">
+		<property name="assetPath">
+			<value>Win_sound_5.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.9790022675736962</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{4b517497-dcb1-440f-970a-3b57fc277265}</destination>
+		</relationship>
+	</object>
+</objects>

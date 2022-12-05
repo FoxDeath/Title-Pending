@@ -1,8 +1,7 @@
 {
     "name": "FMODUnityResonance",
     "references": [
-        "FMODUnity",
-        "UnityEngine.UI"
+        "FMODUnity"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
